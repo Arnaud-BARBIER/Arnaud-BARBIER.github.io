@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr" data-theme="light">
+<html lang="fr" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -9,21 +9,35 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cdefs%3E%3CclipPath%20id%3D%22c%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22/%3E%3C/clipPath%3E%3C/defs%3E%3Cg%20clip-path%3D%22url%28%23c%29%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%231D6A96%22/%3E%3Cpolygon%20points%3D%220%2C46%2014%2C26%2022%2C34%2034%2C13%2046%2C30%2054%2C22%2064%2C33%2064%2C64%200%2C64%22%20fill%3D%22%237CC6E8%22/%3E%3Cpolygon%20points%3D%220%2C55%2012%2C42%2022%2C49%2034%2C32%2046%2C47%2056%2C40%2064%2C47%2064%2C64%200%2C64%22%20fill%3D%22%23CDEEFB%22/%3E%3C/g%3E%3C/svg%3E">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#1D6A96">
+<meta name="theme-color" content="#0e1117">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Arnaud Barbier">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Arnaud Barbier, outils de gestion Excel/VBA et Python">
+<meta property="og:description" content="Des outils ciblés, branchés sur votre façon de travailler. Dashboard de risque, gestionnaire de contrats, moteur de backtest. Disponible pour un stage de 6 mois de janvier à juin 2027.">
+<meta property="og:url" content="https://arnaud-barbier.github.io/">
+<meta property="og:image" content="https://arnaud-barbier.github.io/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Aperçu du site d'Arnaud Barbier : outils de gestion et projets">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Arnaud Barbier, outils de gestion Excel/VBA et Python">
+<meta name="twitter:description" content="Des outils ciblés, branchés sur votre façon de travailler.">
+<meta name="twitter:image" content="https://arnaud-barbier.github.io/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap">
 <style>
 :root{
-  --bg:#FFFFFF; --well:#F5F6F7; --hair:#C9CCD1; --hard:#101215;
-  --ink:#101215; --sub:#54585F; --faint:#868B93;
-  --accent:#1D6A96; --accent-well:#EEF7FC;
+  --bg:#0e1117; --well:#12171f; --hair:#21262d; --hard:#3d444d;
+  --ink:#e6edf3; --sub:#8b949e; --faint:#6e7681;
+  --accent:#8FD3F4; --accent-well:#10202B;
   --ice:#7CC6E8; --ice-2:#CDEEFB; --ice-ink:#0B2233;
-  --sky-1:#E8F4FB; --sky-2:#FFFFFF; --ridge-1:#D9DCE0; --ridge-2:#AEB3BA; --ridge-3:#6F757D;
+  --sky-1:#10202B; --sky-2:#0e1117; --ridge-1:#1b2129; --ridge-2:#262e38; --ridge-3:#3a444f;
   --f-sans:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;
   --f-serif:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;
   --rule:linear-gradient(90deg,var(--ice) 0%,var(--accent) 22%,var(--hard) 46%,var(--hair) 80%);
-  color-scheme:light;
+  color-scheme:dark;
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);
   padding-bottom:env(safe-area-inset-bottom,0px);
@@ -57,7 +71,7 @@ a:hover{color:var(--ink)}
 .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
 /* barre de progression */
-.progress{position:fixed;top:0;left:0;height:3px;width:100%;z-index:50;pointer-events:none;
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;z-index:50;pointer-events:none;opacity:0;transition:opacity .3s ease;
   background:linear-gradient(90deg,var(--ice-2),var(--ice),var(--accent));transform-origin:0 50%;transform:scaleX(0)}
 
 /* en-tête */
@@ -460,10 +474,10 @@ dl.facts dd{margin:0;font-size:.97rem}
 @media (max-width:860px){.proj .scrolly{grid-template-columns:minmax(0,1fr)}.proj-hero{min-height:0}}
 
 /* cartes qui portent le texte : pleine largeur, couleurs vives */
-:root{--card-bg:linear-gradient(135deg,#D3EFFB 0%,#A6DAF2 100%);--card-ink:#0B2233;--card-sub:#24475C;--card-acc:#0B5A87}
+:root{--card-bg:linear-gradient(135deg,#2176A6 0%,#12496A 100%);--card-ink:#F2F9FD;--card-sub:#CDE7F4;--card-acc:#D4F1FD}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--card-bg:linear-gradient(135deg,#2176A6 0%,#12496A 100%);--card-ink:#F2F9FD;--card-sub:#CDE7F4;--card-acc:#D4F1FD}}
 :root[data-theme="dark"]{--card-bg:linear-gradient(135deg,#2176A6 0%,#12496A 100%);--card-ink:#F2F9FD;--card-sub:#CDE7F4;--card-acc:#D4F1FD}
-.theme-ice{--card-bg:linear-gradient(135deg,#D3EFFB 0%,#A6DAF2 100%);--card-ink:#0B2233;--card-sub:#24475C;--card-acc:#0B5A87}
+.theme-ice,.theme-night,.theme-glacier{--card-bg:linear-gradient(135deg,#D3EFFB 0%,#A6DAF2 100%);--card-ink:#0B2233;--card-sub:#24475C;--card-acc:#0B5A87}
 .minis{gap:14px}
 .minis::before{display:none}
 .mini,.mini:last-child,.proj .case .body,.cv > div{background:var(--card-bg);color:var(--card-ink);border:0;border-radius:8px}
@@ -598,6 +612,80 @@ dl.facts dd{margin:0;font-size:.97rem}
   .hero-text{margin-top:-56px}
 }
 
+/* carrousel de l'étape 1 */
+.carousel{margin:0}
+.car-view{overflow:hidden;border:1px solid var(--hard);border-radius:2px;background:#fff;aspect-ratio:1.95}
+.car-track{display:flex;height:100%;transition:transform .6s cubic-bezier(.45,0,.2,1)}
+.car-track img{flex:0 0 100%;width:100%;height:100%;object-fit:contain;display:block;cursor:zoom-in;background:#fff}
+.car-bar{display:flex;align-items:center;gap:12px;margin-top:10px}
+.car-pause{font:600 .72rem/1 var(--f-sans);letter-spacing:-.08em;min-width:34px;height:26px;border:1px solid var(--hair);border-radius:2px;background:var(--well);color:var(--ink);cursor:pointer}
+.car-pause:hover{border-color:var(--accent)}
+.car-dots{display:flex;gap:6px}
+.car-dots button{width:22px;height:12px;padding:0;border:0;background:none;cursor:pointer;position:relative}
+.car-dots button::after{content:"";position:absolute;left:0;right:0;top:4px;height:4px;background:var(--hair);transition:background .3s}
+.car-dots button.on::after{background:var(--accent)}
+.step .m-only.carousel figcaption{font:400 .82rem/1.45 var(--f-sans);color:var(--sub);margin-top:8px}
+
+.keynote ul.kl li:nth-child(5):last-child{grid-column:1/-1}
+.keynote ul.kl{list-style:none;margin:12px 0 14px;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.keynote ul.kl li{position:relative;margin:0;padding:11px 14px 11px 40px;background:var(--bg);border:1px solid var(--hair);border-radius:2px;line-height:1.45}
+.keynote ul.kl li::before{content:"";position:absolute;left:14px;top:14px;width:15px;height:15px;background:var(--accent);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M1.5 7h10M7.5 3l4 4-4 4' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M1.5 7h10M7.5 3l4 4-4 4' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;transition:transform .3s ease}
+.keynote ul.kl li{opacity:0;transform:translateX(-16px);transition:opacity .5s ease,transform .6s cubic-bezier(.2,.7,.2,1),border-color .3s,background .3s}
+.keynote.in ul.kl li{opacity:1;transform:none}
+.keynote.in ul.kl li:nth-child(1){transition-delay:.15s}.keynote.in ul.kl li:nth-child(2){transition-delay:.3s}.keynote.in ul.kl li:nth-child(3){transition-delay:.45s}.keynote.in ul.kl li:nth-child(4){transition-delay:.6s}.keynote.in ul.kl li:nth-child(5){transition-delay:.75s}
+.keynote.in ul.kl li::before{animation:nudge .8s ease-in-out 1}
+.keynote.in ul.kl li:nth-child(1)::before{animation-delay:.7s}.keynote.in ul.kl li:nth-child(2)::before{animation-delay:.85s}.keynote.in ul.kl li:nth-child(3)::before{animation-delay:1s}.keynote.in ul.kl li:nth-child(4)::before{animation-delay:1.15s}.keynote.in ul.kl li:nth-child(5)::before{animation-delay:1.3s}
+@keyframes nudge{0%,100%{transform:none}50%{transform:translateX(4px)}}
+.keynote ul.kl li:hover{border-color:var(--accent)}
+.keynote ul.kl li:hover::before{transform:translateX(4px)}
+@media (prefers-reduced-motion:reduce){.keynote ul.kl li{opacity:1;transform:none}.keynote ul.kl li::before{animation:none!important}}
+@media (max-width:760px){.keynote ul.kl{grid-template-columns:minmax(0,1fr)}}
+.keynote + .body{margin-top:16px}
+
+.engine-note-top{margin:28px 0 12px}
+
+.topwrap .brand,.topwrap .nav a{color:#0B2233}
+.topwrap .nav a:hover{color:#1D6A96}
+
+/* encadré « Architecture actuelle » mis en avant */
+.spotlight{margin-top:26px;position:relative;padding:28px 32px 26px 36px;background:linear-gradient(120deg,#0B2233 0%,#154868 100%);color:#EAF6FC;border-radius:2px;overflow:hidden}
+.spotlight::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,#CDEEFB,#7CC6E8)}
+.spotlight::after{content:"";position:absolute;right:-40px;bottom:-30px;width:260px;height:120px;opacity:.14;
+  background:#CDEEFB;clip-path:polygon(0 100%,18% 40%,30% 62%,48% 10%,66% 55%,80% 30%,100% 70%,100% 100%)}
+.sp-k{font:700 .78rem/1.3 var(--f-sans);letter-spacing:.14em;text-transform:uppercase;color:#8FD3F4;margin-bottom:10px}
+.sp-lead{font:700 clamp(1.25rem,2.3vw,1.7rem)/1.25 var(--f-sans);letter-spacing:-.015em;max-width:34ch;margin-bottom:14px;color:#fff}
+.spotlight p{position:relative;z-index:1;max-width:72ch}
+.spotlight p strong{color:#CDEEFB}
+.ridge-div polygon{transition:none!important}
+
+/* accroche : trois repères */
+.facts-strip{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:26px}
+.facts-strip div{display:flex;align-items:baseline;gap:8px}
+.facts-strip b{font:750 1.5rem/1 var(--f-sans);letter-spacing:-.02em;color:var(--ink)}
+.facts-strip span{font:500 .92rem/1.3 var(--f-sans);color:var(--sub)}
+/* exigences allégées */
+.promise .stmt{font:600 clamp(1.05rem,1.6vw,1.2rem)/1.45 var(--f-sans);color:var(--ink);margin-top:12px;max-width:40ch}
+.proof-d{margin-top:12px}
+.proof-d summary{cursor:pointer;font:600 .84rem/1.3 var(--f-sans);color:var(--accent);list-style:none;display:inline-flex;align-items:center;gap:6px}
+.proof-d summary::-webkit-details-marker{display:none}
+.proof-d summary::before{content:"";width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-45deg);transition:transform .25s}
+.proof-d[open] summary::before{transform:rotate(45deg)}
+.proof-d .proof{margin-top:10px}
+.promise .proof-links{margin-top:10px}
+.intro-strong{color:var(--ink)!important}
+
+/* entrée dans un projet */
+.proj-k{position:relative;display:inline-block;padding-bottom:6px}
+.proj-k::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:linear-gradient(90deg,var(--accent),var(--ice));transform:scaleX(0);transform-origin:0 50%;transition:transform .8s cubic-bezier(.2,.7,.2,1) .1s}
+.proj.entered .proj-k::after{transform:scaleX(1)}
+.proj-head h2 .w{display:inline-block;opacity:0;transform:translateY(.55em);transition:opacity .55s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
+.proj.entered .proj-head h2 .w{opacity:1;transform:none}
+.proj-hero .frame{clip-path:inset(10% 4% 10% 4%);transform:scale(1.035);transition:clip-path 1s cubic-bezier(.2,.7,.2,1) .25s,transform 1.2s cubic-bezier(.2,.7,.2,1) .25s}
+.proj.entered .proj-hero .frame{clip-path:inset(0 0 0 0);transform:none}
+.proj-meta,.proj-sub{opacity:0;transform:translateY(8px);transition:opacity .6s ease .45s,transform .6s ease .45s}
+.proj.entered .proj-meta,.proj.entered .proj-sub{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.proj-k::after,.proj-head h2 .w,.proj-hero .frame,.proj-meta,.proj-sub{transition:none!important;opacity:1!important;transform:none!important;clip-path:none!important}}
+
 /* parallaxe de l'en-tête */
 .para{position:absolute;inset:0;will-change:transform}
 .photo svg g{will-change:transform}
@@ -728,16 +816,21 @@ dl.facts dd{margin:0;font-size:.97rem}
       <div class="hero-grid">
       <div>
       <h1 class="in-seq d1">Des outils ciblés, branchés sur votre façon de travailler.</h1>
-      <p class="lede in-seq d2">Je conçois en Excel/VBA et en Python des outils de gestion qui partent de besoins opérationnels. Faits pour s'intégrer aux fichiers et optimiser les habitudes déjà en place, ils restent simples à utiliser malgré leur complexité interne, tout en restant facilement maintenables. Expertise fondée sur 2 expériences en entreprise, Trium WeSign et Raoul Rolly, ainsi que plusieurs projets personnels présentés ici.</p>
+      <p class="lede in-seq d2">Je conçois en Excel/VBA et en Python des outils de gestion qui partent de besoins opérationnels. Faits pour s'intégrer aux fichiers et aux habitudes déjà en place, ils restent simples à utiliser et facilement maintenables.</p>
       <p class="search in-seq d3"><b>Disponible pour un stage de 6 mois de janvier à juin 2027.</b></p>
       <div class="cta in-seq d4">
         <a class="btn" href="mailto:arnaud.barbier@grenoble-em.com?subject=Stage%202027">Écrire un e-mail</a>
         <a class="link" href="#projets">Voir les projets</a>
       </div>
+      <div class="facts-strip in-seq d4">
+        <div><b>3</b><span>projets complets et opérationnels</span></div>
+        <div><b>2</b><span>expériences en entreprise</span></div>
+        <div><b>Excel/VBA</b><span>et Python</span></div>
+      </div>
       </div>
 
       <div class="vitrine in-seq d3" id="vitrine" aria-label="Aperçu de trois outils">
-        <p class="vit-hint">Aperçu de trois outils</p>
+        <p class="vit-hint">Aperçu</p>
         <div class="vit-head">
           <div class="vit-tabs" role="tablist">
             <button type="button" role="tab" aria-selected="true" aria-controls="vitBody"><span class="tn">1</span>Dashboard<i></i></button>
@@ -773,7 +866,7 @@ dl.facts dd{margin:0;font-size:.97rem}
   <section class="block" id="projets" aria-labelledby="projets-t">
     <div class="wrap">
       <p class="lbl">Projets personnels</p>
-      <h2 id="projets-t">Trois projets développés, testés et documentés</h2>
+      <h2 id="projets-t">Trois projets complets, documentés et opérationnels</h2>
       <div class="summary">
         <a class="sum-card reveal" href="#dashboard">
           <span class="sum-img"><img src="img/dashboard.jpg" alt="" loading="lazy"></span>
@@ -800,69 +893,31 @@ dl.facts dd{margin:0;font-size:.97rem}
       <div class="promises">
         <div class="promise reveal">
           <div class="word"><svg viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="11" fill="none" stroke="var(--ice)" stroke-width="2.5"/><circle cx="15" cy="15" r="4" fill="var(--accent)"/></svg>Ciblé</div>
-          <p>Le point de départ est une tâche répétitive, coûteuse en temps ou source d'erreurs</p>
-          <p class="proof">Plusieurs milliers de tableaux à structure différente peuvent être modifiés en une seule fois à partir d'une règle écrite en français. Le traitement devient structuré et reproductible, avec un historique complet des opérations pour assurer la traçabilité des modifications.<span class="proof-links"><a href="#engine">Essayer le moteur de règles</a></span></p>
+          <p class="stmt">Le point de départ est une tâche répétitive, coûteuse en temps ou source d'erreurs</p>
+          <details class="proof-d"><summary>En pratique</summary><p class="proof">Plusieurs milliers de tableaux à structure différente peuvent être modifiés en une seule fois à partir d'une règle écrite en français. Le traitement devient structuré et reproductible, avec un historique complet des opérations pour assurer la traçabilité des modifications.</p></details>
+          <div class="proof-links"><a href="#etape-5">Voir le moteur de règles</a></div>
         </div>
         <div class="promise reveal">
           <div class="word"><svg viewBox="0 0 30 30" aria-hidden="true"><rect x="3" y="9" width="10" height="12" rx="1.5" fill="none" stroke="var(--ice)" stroke-width="2.5"/><rect x="17" y="9" width="10" height="12" rx="1.5" fill="var(--accent)"/><path d="M13 15h4" stroke="var(--ink)" stroke-width="2.5"/></svg>Intégré</div>
-          <p>L'outil reprend les fichiers, les formats et les habitudes en place sans imposer de changement majeur.</p>
-          <p class="proof">Chaque tableau généré reste un classeur Excel standard et peut continuer à être modifié manuellement.<span class="proof-links"><a href="#etape-3">Voir la génération des tableaux</a><a href="#courtage">Voir la synchronisation Excel et Google Sheets</a></span></p>
+          <p class="stmt">L'outil reprend les fichiers, les formats et les habitudes en place sans imposer de changement majeur.</p>
+          <details class="proof-d"><summary>En pratique</summary><p class="proof">Chaque tableau généré reste un classeur Excel standard et peut continuer à être modifié manuellement.</p></details>
+          <div class="proof-links"><a href="#etape-3">Voir la génération des tableaux</a><a href="#courtage">Voir la synchronisation Excel et Google Sheets</a></div>
         </div>
         <div class="promise reveal">
           <div class="word"><svg viewBox="0 0 30 30" aria-hidden="true"><path d="M4 22 L12 14 L17 18 L26 7" fill="none" stroke="var(--ice)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="26" cy="7" r="3" fill="var(--accent)"/></svg>Simple à utiliser</div>
-          <p>Le gain de temps doit d'abord venir de la simplicité d'utilisation, pas seulement de l'automatisation en arrière-plan.</p>
-          <p class="proof">Formulaire de saisie généré automatiquement, documentation interactive, navigation facilitée, valeurs préremplies, contrôles intégrés, messages d'erreur explicites…<span class="proof-links"><a href="#etape-2">Voir le formulaire généré</a><a href="#c2">Voir Backtest Studio</a></span></p>
+          <p class="stmt">Le gain de temps doit d'abord venir de la simplicité d'utilisation, pas seulement de l'automatisation en arrière-plan.</p>
+          <details class="proof-d"><summary>En pratique</summary><p class="proof">Formulaire de saisie généré automatiquement, documentation interactive, navigation facilitée, valeurs préremplies, contrôles intégrés, messages d'erreur explicites…</p></details>
+          <div class="proof-links"><a href="#etape-2">Voir le formulaire généré</a><a href="#c2">Voir Backtest Studio</a></div>
         </div>
         <div class="promise reveal">
           <div class="word"><svg viewBox="0 0 30 30" aria-hidden="true"><path d="M15 3 L25 7 V15 C25 21 20 25.5 15 27 C10 25.5 5 21 5 15 V7Z" fill="none" stroke="var(--ice)" stroke-width="2.5" stroke-linejoin="round"/><path d="M10.5 15 L14 18.5 L20 11.5" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Maintenable</div>
-          <p>Documentation, contrôles, journalisation et mécanismes de sauvegarde font partie de l'architecture des outils.</p>
-          <p class="proof">Couche de paramétrage explicite : les règles métier peuvent être traduites en actions sans intervenir dans le code, rien n'est codé en dur. Documentation claire de la logique interne.<span class="proof-links"><a href="#etape-6">Voir les sauvegardes</a><a href="#c2">Voir les tests et la documentation</a></span></p>
+          <p class="stmt">Documentation, contrôles, journalisation et mécanismes de sauvegarde font partie de l'architecture des outils.</p>
+          <details class="proof-d"><summary>En pratique</summary><p class="proof">Couche de paramétrage explicite : les règles métier peuvent être traduites en actions sans intervenir dans le code, rien n'est codé en dur. Documentation claire de la logique interne.</p></details>
+          <div class="proof-links"><a href="#etape-6">Voir les sauvegardes</a><a href="#c2">Voir les tests et la documentation</a></div>
         </div>
       </div>
 
-      <div class="flow reveal" id="flow" data-mode="manual">
-        <div class="seg" role="group" aria-label="Comparer">
-          <button type="button" data-mode="manual" aria-pressed="true">Environnement existant</button>
-          <button type="button" data-mode="tool" aria-pressed="false">Ce que l'outil ajoute</button>
-        </div>
-        <div class="flow-grid">
-          <div class="col">
-            <h4>Environnement existant</h4>
-            <div class="chip"><i></i>Fichiers Excel de l'équipe</div>
-            <div class="chip"><i></i>Google Sheets partagés</div>
-            <div class="chip"><i></i>Exports du logiciel métier</div>
-            <div class="chip"><i></i>Outils internes déjà en place</div>
-            <div class="chip"><i></i>Saisies, contrôles et consolidations</div>
-          </div>
-          <div class="pipe" aria-hidden="true"><span></span><span></span><span></span></div>
-          <div class="core" aria-live="polite">
-            <div class="state manual">
-              <div class="title">Des étapes encore dispersées</div>
-              <p>Les outils existent déjà et répondent au besoin principal. Mais certaines étapes restent dispersées entre plusieurs fichiers, nécessitent des reprises manuelles ou reposent sur des procédures difficiles à faire évoluer.</p>
-              <svg class="loop" viewBox="0 0 54 54" aria-hidden="true"><path d="M27 6 A21 21 0 1 1 7.5 20" fill="none" stroke="var(--faint)" stroke-width="3" stroke-linecap="round"/><path d="M3 13 L7.5 21 L15 16" fill="none" stroke="var(--faint)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <div class="state tool">
-              <div class="title">Ce que l'outil ajoute</div>
-              <ul>
-                <li>Automatisation des tâches répétitives</li>
-                <li>Contrôles intégrés</li>
-                <li>Consolidation des données</li>
-                <li>Traçabilité des actions</li>
-                <li>Règles métier paramétrables</li>
-              </ul>
-            </div>
-          </div>
-          <div class="pipe" aria-hidden="true"><span></span><span></span><span></span></div>
-          <div class="col out">
-            <h4>Ce que l'équipe reçoit</h4>
-            <div class="chip"><i></i>Reporting<em class="late">en retard</em><em class="ok">à jour</em></div>
-            <div class="chip"><i></i>Alertes sur seuils<em class="late">absentes</em><em class="ok">automatiques</em></div>
-            <div class="chip"><i></i>Tableaux et contrats<em class="late">à vérifier</em><em class="ok">contrôlés</em></div>
-            <div class="chip"><i></i>Historique<em class="late">aucun</em><em class="ok">complet</em></div>
-          </div>
-        </div>
-        <p class="flow-cap">L'objectif n'est pas de remplacer l'existant, mais d'automatiser les étapes qui restent coûteuses en temps ou difficiles à maintenir.</p>
-      </div>
+      
     </div>
   </section>
 
@@ -870,7 +925,7 @@ dl.facts dd{margin:0;font-size:.97rem}
     <div class="wrap">
       <p class="lbl">Réalisations</p>
       <h2 id="real-t">Projets et outils en situation réelle</h2>
-      <p class="intro">Construits en entreprise et en projets personnels. Chacun peut être présenté et démontré.</p>
+      <p class="intro intro-strong">Construits en entreprise et en projets personnels. Chacun peut être présenté et démontré.</p>
 
       <div class="group-h reveal"><h3>En entreprise</h3><p>Trois expériences, dont deux consacrées à la création d'outils financiers.</p></div>
       <div class="minis">
@@ -887,7 +942,7 @@ dl.facts dd{margin:0;font-size:.97rem}
         <div class="mini reveal">
           <div class="ctx">Feel Mining, Grenoble<br>Mai à juillet 2024</div>
           <h3>Analyse d'actifs numériques</h3>
-          <p>Création d'une méthode d'analyse appliquée à un protocole décentralisé dans le secteur de l'IA, puis rédaction de rapports destinés à évaluer l'intégration de nouveaux crypto-actifs sur la plateforme d'échange.</p>
+          <p>Création d'une méthode d'analyse du marché des crypto-actifs liés à l'intelligence artificielle, afin d'identifier les projets les plus pertinents à intégrer à la plateforme d'échange, puis rédaction de rapports d'aide à la décision.</p>
         </div>
       </div>
     </div>
@@ -917,10 +972,10 @@ dl.facts dd{margin:0;font-size:.97rem}
               <dt>Faire circuler</dt><dd>Exporter et importer les graphiques en PNG d'un classeur à l'autre.</dd>
               <dt>Documenter</dt><dd>Rédiger et tenir à jour une documentation technique, avec un onglet de débogage pour contrôler les calculs.</dd>
             </dl>
-            <p class="hindsight">Cette expérience m'a surtout appris à reconnaître les architectures et processus les plus simples et efficaces. Après avoir parfois trop complexifié certaines parties, j'ai appris à mieux distinguer ce qui apporte réellement de la valeur de ce qui ajoute seulement de la complexité.</p>
           </div>
           <figure class="media fit scrub" style="--ar:0.845" data-src="img/dashboard-architecture.png"><div class="frame"></div><figcaption>Graphe d'appels des macros entre les classeurs du projet. Cliquez pour agrandir.</figcaption></figure>
         </div>
+        <div class="keynote reveal"><p><strong>Après avoir parfois trop complexifié certaines parties, j'ai appris à mieux distinguer ce qui apporte réellement de la valeur de ce qui ajoute seulement de la complexité. Cette expérience m'a appris à repérer plus rapidement les architectures et les processus les plus simples et efficaces.</strong></p></div>
         <div class="more"><a class="link" href="https://drive.google.com/file/d/1UW9pZjjBp2D2HGCoDu01Oh5XrP5ICXB5/view?usp=sharing" target="_blank" rel="noopener">Lire la documentation technique (PDF)</a></div>
       </article>
     </div>
@@ -933,10 +988,17 @@ dl.facts dd{margin:0;font-size:.97rem}
         <header class="proj-head reveal"><p class="proj-k">Projet personnel 2 sur 3</p><h2 id="c1">Gestionnaire de contrats : génération et modification automatisées de tableaux Excel à structure variée</h2><p class="proj-meta">Projet personnel, août 2026, Excel et VBA, réalisé en moins de 4 jours</p></header>
         <div class="proj-hero" style="--ar:1.8693"><figure class="media wide fit" style="--ar:1.8693" data-src="img/contrats-hub.jpg"><div class="frame"></div><figcaption>Le HUB : chaque tableau généré reste un classeur Excel standard. Cliquez pour agrandir.</figcaption></figure></div>
         <div class="body reveal">
-          <p><b>Mon projet Excel le plus récent, réalisé en août 2026 en moins de 4 jours.</b> Il réunit tout ce que j'ai appris en conception d'outils, en automatisation et en programmation Excel/VBA efficace.</p>
-          <p>Modifier des milliers de tableaux à la main prend plusieurs jours, même avec une pratique optimisée d'Excel. Ici, on écrit sa condition en français ; chaque modification est tracée et peut être annulée.</p>
-          <p>L'outil reprend des tableaux déjà en place dans une entreprise, sans imposer de nouveau logiciel. On dessine son modèle dans Excel, contraintes d'impression comprises ; un formulaire de saisie est généré automatiquement ; chaque tableau est rangé dans un fichier central. Un moteur de règles permet ensuite de modifier, trier ou extraire ces tableaux en une seule fois, sans écrire de code. La même approche s'applique au reporting, au suivi de positions et à la consolidation de données.</p>
+          <p><b>Mon projet Excel le plus récent, réalisé en août 2026 en moins de 4 jours. Il réunit tout ce que j'ai appris en conception d'outils, en automatisation et en programmation Excel/VBA efficace.</b></p>
+          <p>Même bien structuré, un processus Excel conserve souvent des contrôles, des ajustements et des copier-coller répétitifs qui, mis bout à bout, mobilisent beaucoup de temps.</p>
         </div>
+        <div class="keynote reveal"><p><strong>L'outil s'intègre aux tableaux Excel déjà utilisés par l'entreprise, sans imposer de nouveau logiciel.</strong></p>
+          <p>Il permet de :</p>
+          <ul class="kl"><li>designer des tableaux directement dans Excel, contraintes d'impression comprises ;</li><li>générer automatiquement un formulaire de saisie adapté ;</li><li>ranger chaque tableau généré dans un fichier central ;</li><li>modifier, trier ou extraire plusieurs tableaux en une seule fois grâce à un moteur de règles, sans écrire de code ;</li><li>déclencher différentes actions à partir des contrats : export, génération de documents, envoi par e-mail ou archivage.</li></ul>
+          <p>La même architecture peut servir au reporting, au suivi de positions ou à la consolidation de données.</p></div>
+        <aside class="spotlight reveal">
+          <p class="sp-lead">Des tableaux complets, par choix</p>
+          <p>J'ai volontairement conservé chaque contrat sous la forme d'une fiche Excel complète, avec ses tableaux, ses formules et sa mise en forme, plutôt que de le réduire à un simple enregistrement de données compilé. Je l'ai fait pour montrer qu'il est possible d'automatiser un workflow Excel existant sans modifier ses fichiers ni sa logique interne.</p>
+        </aside>
         <div class="tags reveal"><span class="tag">Ciblé</span><span class="tag">Intégré</span><span class="tag">Simple à utiliser</span><span class="tag">Maintenable</span></div>
 
         <div class="figs reveal">
@@ -983,14 +1045,14 @@ dl.facts dd{margin:0;font-size:.97rem}
         <div class="scrolly" id="scrolly">
           <div class="steps">
             <div class="step" data-step="0" id="etape-1"><div class="n">Étape 1 sur 7</div><h4>Dessiner le modèle</h4><p>On dessine le tableau dans Excel, ici un contrat, avec sa mise en forme et ses propres logiques de calcul. Chaque zone à remplir porte une balise, comme <code>{{supplier_name}}</code>. Ajustement automatique des tableaux (représentés ici par des contrats) au format A4, puis le modèle rejoint une galerie avec sa version et son statut.</p>
-              <figure class="media m-only scrub" data-src="img/contrats-modele.jpg"><div class="frame"></div><figcaption>Le modèle dessiné dans Excel, avec ses balises, ses repères d'impression et ses métadonnées.</figcaption></figure></div>
+              <figure class="m-only carousel"><div class="car-view"><div class="car-track"><img src="img/contrats-etape1-editeur.jpg" alt="Éditeur de modèles : paramètres, options et dictionnaire des zones du modèle actif" loading="lazy"><img src="img/contrats-modele.jpg" alt="Le modèle dessiné dans Excel, avec ses balises et ses métadonnées" loading="lazy"><img src="img/contrats-etape1-apercu-a4.jpg" alt="Aperçu avant impression : ajustement automatique au format A4" loading="lazy"><img src="img/contrats-etape1-modele-multi.jpg" alt="Modèles générés avec leurs repères de mise en page" loading="lazy"></div></div><div class="car-bar"><button type="button" class="car-pause" aria-label="Mettre le diaporama en pause" title="Pause">❚❚</button><div class="car-dots"><button type="button" aria-label="Image 1"></button><button type="button" aria-label="Image 2"></button><button type="button" aria-label="Image 3"></button><button type="button" aria-label="Image 4"></button></div></div><figcaption>Étape 1 : l'éditeur de modèles et son dictionnaire des zones, le modèle balisé, l'aperçu A4 et le modèle ajusté.</figcaption></figure></div>
             <div class="step" data-step="1" id="etape-2"><div class="n">Étape 2 sur 7</div><h4>Saisir les données</h4><p>L'outil génère le formulaire adapté au modèle choisi. On le remplit ou on y colle des données ; les champs obligatoires, les dates et les identifiants uniques sont contrôlés à la saisie.</p>
               <figure class="media m-only scrub" data-src="img/contrats-formulaire.jpg"><div class="frame"></div><figcaption>La feuille de saisie : import des données, catalogue des modèles, export vers le HUB.</figcaption></figure></div>
             <div class="step" data-step="2" id="etape-3"><div class="n">Étape 3 sur 7</div><h4>Générer les contrats</h4><p>En un clic, en masse si besoin. Chaque tableau est rangé dans le HUB avec un numéro lisible, par exemple <code>CTR-FY2026-FR-SVC-000001</code>, et reste un tableau Excel normal que l'équipe peut continuer à remplir à la main.</p>
               <figure class="media m-only scrub" data-src="img/contrats-hub.jpg"><div class="frame"></div><figcaption>Le HUB et son index de contrats.</figcaption></figure></div>
             <div class="step" data-step="3" id="etape-4"><div class="n">Étape 4 sur 7</div><h4>Suivre et tracer</h4><p>Chaque action entre au journal : date, modèle utilisé, contrat concerné, résultat. L'index du HUB permet de retrouver n'importe quel tableau.</p>
               <figure class="media m-only scrub" data-src="img/contrats-journal.jpg"><div class="frame"></div><figcaption>Le journal : chaque action horodatée, avec son modèle, son contrat et son statut.</figcaption></figure></div>
-            <div class="step" data-step="4" id="etape-5"><div class="n">Étape 5 sur 7</div><h4>Modifier en masse</h4><p>Le satellite applique des règles écrites en français, sur le principe SI… ALORS… SINON…. Une modification peut remplacer un texte, recalculer une valeur ou lancer une macro. Vous pouvez l'essayer juste en dessous.</p>
+            <div class="step" data-step="4" id="etape-5"><div class="n">Étape 5 sur 7</div><h4>Modifier en masse</h4><p>Le satellite applique des règles écrites en français, sur le principe SI… ALORS… SINON…. Une modification peut remplacer un texte, recalculer une valeur ou lancer une macro.</p>
               <figure class="m-only stackfig"><div class="stack"><img src="img/contrats-actions.jpg" alt="Onglet Actions du satellite" loading="lazy"><img src="img/contrats-conditions.jpg" alt="Onglet Conditions du satellite" loading="lazy"><img src="img/contrats-modifications.jpg" alt="Onglet Modifications du satellite" loading="lazy"></div><figcaption>Les trois couches du satellite : l'action enchaîne des conditions, chaque condition oriente vers une modification ou une requête.</figcaption></figure></div>
             <div class="step" data-step="5" id="etape-6"><div class="n">Étape 6 sur 7</div><h4>Sécuriser chaque modification</h4><p>Le HUB est sauvegardé avant chaque exécution. On navigue entre les sauvegardes, en arrière comme en avant, et un rapport explique la décision prise pour chaque contrat.</p>
               <figure class="m-only stackfig"><div class="stack"><img src="img/contrats-runlog.jpg" alt="Journal d'exécution du satellite" loading="lazy"><img src="img/contrats-config-hub.jpg" alt="Configuration du HUB et navigation entre les sauvegardes" loading="lazy"></div><figcaption>Le journal d'exécution explique chaque décision, contrat par contrat ; la configuration du HUB permet de naviguer entre les sauvegardes.</figcaption></figure></div>
@@ -1000,7 +1062,7 @@ dl.facts dd{margin:0;font-size:.97rem}
           <div class="stage">
             <div class="stage-bar"><span id="stageLbl">Étape 1 sur 7</span><span class="track"><i id="stageFill"></i></span></div>
             <div class="layers">
-              <figure class="media layer" data-src="img/contrats-modele.jpg" data-cap="Le modèle dessiné dans Excel, avec ses balises, ses repères d'impression et ses métadonnées."><div class="frame"></div><figcaption class="lc">Le modèle dessiné dans Excel, avec ses balises, ses repères d'impression et ses métadonnées.</figcaption></figure>
+              <figure class="layer carousel" data-cap="Étape 1 : l'éditeur de modèles et son dictionnaire des zones, le modèle balisé, l'aperçu A4 et le modèle ajusté."><div class="car-view"><div class="car-track"><img src="img/contrats-etape1-editeur.jpg" alt="Éditeur de modèles : paramètres, options et dictionnaire des zones du modèle actif" loading="lazy"><img src="img/contrats-modele.jpg" alt="Le modèle dessiné dans Excel, avec ses balises et ses métadonnées" loading="lazy"><img src="img/contrats-etape1-apercu-a4.jpg" alt="Aperçu avant impression : ajustement automatique au format A4" loading="lazy"><img src="img/contrats-etape1-modele-multi.jpg" alt="Modèles générés avec leurs repères de mise en page" loading="lazy"></div></div><div class="car-bar"><button type="button" class="car-pause" aria-label="Mettre le diaporama en pause" title="Pause">❚❚</button><div class="car-dots"><button type="button" aria-label="Image 1"></button><button type="button" aria-label="Image 2"></button><button type="button" aria-label="Image 3"></button><button type="button" aria-label="Image 4"></button></div></div><figcaption class="lc">Étape 1 : l'éditeur de modèles et son dictionnaire des zones, le modèle balisé, l'aperçu A4 et le modèle ajusté.</figcaption></figure>
               <figure class="media layer" data-src="img/contrats-formulaire.jpg" data-cap="La feuille de saisie : import des données, catalogue des modèles, export vers le HUB."><div class="frame"></div><figcaption class="lc">La feuille de saisie : import des données, catalogue des modèles, export vers le HUB.</figcaption></figure>
               <figure class="media layer" data-src="img/contrats-hub.jpg" data-cap="Le HUB et son index de contrats."><div class="frame"></div><figcaption class="lc">Le HUB et son index de contrats.</figcaption></figure>
               <figure class="media layer" data-src="img/contrats-journal.jpg" data-cap="Le journal : chaque action horodatée, avec son modèle, son contrat et son statut."><div class="frame"></div><figcaption class="lc">Le journal : chaque action horodatée, avec son modèle, son contrat et son statut.</figcaption></figure>
@@ -1012,30 +1074,7 @@ dl.facts dd{margin:0;font-size:.97rem}
           </div>
         </div>
 
-        <div class="engine reveal" id="engine">
-          <div class="engine-bar"><span><span class="dot"></span>Satellite : moteur de règles</span><span>Démonstration, données fictives</span></div>
-          <div class="engine-grid">
-            <div class="rule">
-              <label for="ruleSel">Règle à appliquer</label>
-              <select id="ruleSel"></select>
-              <dl id="ruleDl"></dl>
-              <div class="run">
-                <button type="button" class="go" id="runBtn">Exécuter la règle</button>
-                <button type="button" id="undoBtn" disabled>Revenir en arrière</button>
-              </div>
-              <p class="backups" id="backups"></p>
-            </div>
-            <div class="hub">
-              <div class="hub-head"><span>HUB : <span id="count">144</span> contrats</span><span id="hubStat"></span></div>
-              <div class="tiles" id="tiles" aria-hidden="true"></div>
-              <div class="legend"><span><i></i>Contrat</span><span><i class="h"></i>Modifié par la dernière règle</span><span><i class="r"></i>À renouveler</span></div>
-              <div class="fiche" id="fiche" aria-live="polite"></div>
-            </div>
-          </div>
-          <div class="log"><h4>Journal d'exécution</h4><ol id="log" aria-live="polite"></ol></div>
-        </div>
-        <p class="engine-note">Cliquez sur un contrat pour ouvrir son tableau. Choisissez une règle, exécutez-la, puis revenez en arrière : c'est le fonctionnement du vrai satellite, réduit à l'essentiel.</p>
-        <div class="keynote reveal"><p>J'ai volontairement conservé cette architecture pour montrer qu'il est possible d'automatiser un workflow Excel existant tout en conservant ses tableaux, ses formules et sa logique interne.</p></div>
+
         <p class="next reveal"><b>Évolutions prévues.</b> Version allégée qui ne stocke que les données et reconstruit la mise en forme à la demande. Export PDF, création de documents Word et préparation d'e-mails Outlook directement depuis le HUB.</p>
         <div class="more"><a class="link" href="https://docs.google.com/document/d/129ODu5qfFRf_Dqz5BEqmKPtHgnwbpAgZbLpZU3YuP6k/edit?usp=sharing" target="_blank" rel="noopener">Lire la présentation complète</a></div>
       </article>
@@ -1048,10 +1087,13 @@ dl.facts dd{margin:0;font-size:.97rem}
       <article class="case" aria-labelledby="c2">
         <header class="proj-head reveal"><p class="proj-k">Projet personnel 3 sur 3</p><h2 id="c2">Moteur de backtest et Backtest Studio, l'infrastructure prise en charge</h2><p class="proj-sub">Une interface simple pour exploiter un moteur de backtest Python/Numba complexe.</p><p class="proj-meta">Projet personnel, depuis février 2026, Python, Numba et extension VS Code</p></header>
         <div class="proj-hero" style="--ar:1.5901"><figure class="media wide fit" style="--ar:1.5901" data-src="img/backtest-studio-doc.jpg"><div class="frame"></div><figcaption>Backtest Studio : la documentation active s'affiche à côté du code, là où se trouve le curseur. Cliquez pour agrandir.</figcaption></figure></div>
+        <div class="keynote reveal"><p><strong>Ce projet montre comment rendre un framework Python complexe plus simple à utiliser en réduisant les frictions techniques.</strong></p>
+          <p>Backtest Studio est une extension VS Code qui :</p>
+          <ul class="kl"><li>génère un notebook prérempli et personnalisé ;</li><li>affiche une documentation interactive ;</li><li>automatise l'insertion des fonctions et paramètres du moteur, sans avoir à les mémoriser ;</li><li>facilite la navigation grâce à une barre de sections qui analyse le notebook ouvert.</li></ul>
+          <p>L'extension permet ainsi d'exploiter toute la puissance du moteur de backtest sans avoir à en gérer la complexité technique.</p></div>
         <div class="body reveal">
-          <p>Tester, optimiser et valider une hypothèse d'investissement en se concentrant uniquement sur la logique de cette hypothèse. Un noyau compilé avec Numba tient la comptabilité du portefeuille à chaque barre : trésorerie, emprunt indexé, devises et frais. Une couche de validation contrôle ensuite la cohérence des résultats. Plus d'info : <a href="https://arnaud-barbier.github.io/Multi-strategy-backtest-engine/" target="_blank" rel="noopener">site du projet</a>.</p>
+          <p><strong>Le moteur</strong> fournit l'infrastructure nécessaire pour tester, optimiser et valider une hypothèse d'investissement. <strong>Son fonctionnement fait intervenir de nombreux paramètres, conventions et mécanismes que Backtest Studio rend accessibles aux utilisateurs.</strong> Son noyau, compilé avec Numba, assure un suivi rapide et comptable du portefeuille testé, à chaque nouvelle barre de données. Plus d'info : <a href="https://arnaud-barbier.github.io/Multi-strategy-backtest-engine/" target="_blank" rel="noopener">site du projet</a>.</p>
         </div>
-        <div class="keynote reveal"><p><strong>Ce projet est une démonstration de simplification d'un outil Python complexe, comprenant de nombreux paramètres, conventions et logiques à connaître. Backtest Studio réduit les frictions d'utilisation du framework : modèle prérempli, navigation facilitée, insertion guidée des composants et documentation interactive.</strong></p></div>
         <div class="tags reveal"><span class="tag">Simple à utiliser</span><span class="tag">Maintenable</span></div>
         <div class="figs reveal">
           <div class="fig"><div class="v">4,44e−16</div><div class="n">résidu comptable maximal sur neuf ans de données journalières</div></div>
@@ -1065,7 +1107,7 @@ dl.facts dd{margin:0;font-size:.97rem}
             <div class="sv-frame"></div>
           </figure>
           <figure class="sv reveal" data-video="video/studio-2-importer-logique.mp4" data-poster="img/studio-2-poster.jpg">
-            <figcaption><span class="n">2</span><span><b>Brancher sa logique métier.</b> Le notebook prévoit directement l'espace où l'insérer, avec les conventions nécessaires déjà indiquées pour comprendre rapidement ce qui est attendu et ce que le framework prend en charge.</span></figcaption>
+            <figcaption><span class="n">2</span><span><b>Brancher sa logique métier.</b> Le notebook prévoit l'emplacement où intégrer la fonction qui génère les signaux d'entrée, avec les données disponibles et le résultat attendu. L'utilisateur sait ainsi immédiatement quelle logique écrire, le reste étant pris en charge par le moteur.</span></figcaption>
             <div class="sv-frame"></div>
           </figure>
           <figure class="sv reveal" data-video="video/studio-3-documentation-active.mp4" data-poster="img/studio-3-poster.jpg">
@@ -1073,10 +1115,10 @@ dl.facts dd{margin:0;font-size:.97rem}
             <div class="sv-frame"></div>
           </figure>
           <figure class="sv reveal" data-video="video/studio-4-lancer-resultats.mp4" data-poster="img/studio-4-poster.jpg">
-            <figcaption><span class="n">4</span><span><b>Lancer le backtest.</b> Un clic pour exécuter le backtest.</span></figcaption>
+            <figcaption><span class="n">4</span><span><b>Lancer le backtest.</b> Un clic pour exécuter le backtest et obtenir les premiers résultats.</span></figcaption>
             <div class="sv-frame"></div>
           </figure>
-          <div class="keynote reveal"><p>En moins d'une minute, le backtest est entièrement configuré : allocation de portefeuille avec rebalance tous les 50 jours, gestion du cash, emprunt indexé sur le SOFR, séparation out-of-sample et historique des modifications. L'infrastructure est déjà prise en charge ; il reste à tester la logique d'investissement.</p><p>Il ne s'agit là que du strict minimum : le moteur permet ensuite d'aller beaucoup plus loin, avec notamment des logiques stateful et des règles d'allocation plus complexes.</p></div>
+          <div class="keynote reveal"><p>En moins d'une minute, le backtest est entièrement configuré : allocation de portefeuille avec rebalance tous les 50 jours, gestion du cash, emprunt indexé sur le SOFR, séparation out-of-sample et historique des modifications.</p><p>Il ne s'agit là que du strict minimum : le moteur permet ensuite d'aller beaucoup plus loin, avec notamment des logiques stateful et des règles d'allocation plus complexes.</p></div>
         </div>
         <div class="more">
           <a class="link" href="https://arnaud-barbier.github.io/Multi-strategy-backtest-engine/" target="_blank" rel="noopener">Voir le site du projet</a>
@@ -1095,7 +1137,7 @@ dl.facts dd{margin:0;font-size:.97rem}
         <div class="reveal">
           <h3>Formation</h3>
           <div class="entry has-logo"><img class="logo" style="padding:3px" src="img/logo-heg.png" alt="Logo de la HEG Genève" width="44" height="44"><div><div class="d">Septembre 2025 à janvier 2026</div><div class="w">HEG Genève, Économie d'entreprise, option principale Banque &amp; Finance (échange)</div><p>Gestion de fortune, finance décentralisée, statistiques. Python pour l'analyse de données (6/6), gestion de projet (5,7/6).</p></div></div>
-          <div class="entry has-logo"><img class="logo" src="img/logo-gem.png" alt="Logo de Grenoble École de Management" width="44" height="44"><div><div class="d">2023 à 2027</div><div class="w">Grenoble École de Management, International Bachelor in Business Administration</div><p>4e année, parcours international, 241 ECTS. Finance d'entreprise, comptabilité, analyse de données. Moyenne de 16,6/20.</p></div></div>
+          <div class="entry has-logo"><img class="logo" style="object-fit:cover" src="img/logo-gem.png" alt="Logo de Grenoble École de Management" width="44" height="44"><div><div class="d">2023 à 2027</div><div class="w">Grenoble École de Management, International Bachelor in Business Administration</div><p>4e année, parcours international, 241 ECTS. Finance d'entreprise, comptabilité, analyse de données. Moyenne de 16,6/20.</p></div></div>
         </div>
         <div class="reveal">
           <h3>Compétences</h3>
@@ -1162,7 +1204,7 @@ dl.facts dd{margin:0;font-size:.97rem}
   var bar = $("progress");
   function onScroll(){
     var h = document.documentElement.scrollHeight - innerHeight;
-    bar.style.transform = "scaleX(" + (h > 0 ? Math.min(1, scrollY / h) : 0) + ")";
+    /* la barre du haut est pilotée par la progression dans le projet affiché */
   }
   onScroll();
 
@@ -1179,11 +1221,11 @@ dl.facts dd{margin:0;font-size:.97rem}
   /* flux avant / après : piloté par le défilement tant que le visiteur n'a pas cliqué */
   var flow = $("flow"), touched = false;
   function setMode(m){
-    if (flow.getAttribute("data-mode") === m) return;
+    if (!flow || flow.getAttribute("data-mode") === m) return;
     flow.setAttribute("data-mode", m);
     flow.querySelectorAll(".seg button").forEach(function(b){ b.setAttribute("aria-pressed", String(b.getAttribute("data-mode") === m)); });
   }
-  flow.querySelectorAll(".seg button").forEach(function(b){
+  if (flow) flow.querySelectorAll(".seg button").forEach(function(b){
     b.addEventListener("click", function(){ touched = true; setMode(b.getAttribute("data-mode")); });
   });
 
@@ -1225,123 +1267,6 @@ dl.facts dd{margin:0;font-size:.97rem}
     }
   });
 
-  /* moteur de règles */
-  var SUP = ["Alpes Semences","Dauphiné Grains","Léman Agri","Vercors Bio"];
-  var seed = 20260923;
-  function rnd(){ seed |= 0; seed = seed + 0x6D2B79F5 | 0; var t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }
-  function pad(n){ return String(n).padStart(6,"0"); }
-  var base = [];
-  for (var i = 1; i <= 144; i++){
-    var y = 2026 + Math.floor(rnd()*3), m = 1 + Math.floor(rnd()*12);
-    base.push({
-      id:"CTR-FY2026-FR-SVC-" + pad(i),
-      supplier:SUP[Math.floor(rnd()*SUP.length)],
-      eligible:rnd() < .35,
-      price:Math.round((800 + rnd()*1600)/10)*10,
-      end:y*100 + m,
-      status:"Actif"
-    });
-  }
-  function clone(a){ return a.map(function(c){ return Object.assign({}, c); }); }
-  var hub = clone(base);
-  var backups = [], KEEP = 5, bcount = 0, lastChanged = {}, selIdx = 13;
-
-  var RULES = [
-    { name:"Hausse de prix chez un fournisseur",
-      action:"Modifier", cond:'fournisseur = <b>Alpes Semences</b>', mod:'prix × <b>1,30</b>',
-      test:function(c){ return c.supplier === "Alpes Semences"; },
-      apply:function(c){ c.price = Math.round(c.price*1.3); return ["price"]; } },
-    { name:"Hausse, puis déduction si éligible",
-      action:"Modifier", cond:'fournisseur = <b>Alpes Semences</b>', mod:'prix × <b>1,30</b> ; SI éligible = <b>OUI</b> ALORS prix × <b>0,60</b> SINON inchangé',
-      test:function(c){ return c.supplier === "Alpes Semences"; },
-      apply:function(c){ c.price = Math.round(c.price*1.3); if (c.eligible) c.price = Math.round(c.price*0.6); return ["price"]; } },
-    { name:"Signaler les contrats à renouveler",
-      action:"Modifier", cond:'fin de contrat avant le <b>31/12/2026</b>', mod:'statut = <b>« À renouveler »</b>',
-      test:function(c){ return c.end <= 202612 && c.status !== "À renouveler"; },
-      apply:function(c){ c.status = "À renouveler"; return ["status"]; } }
-  ];
-  var sel = $("ruleSel");
-  RULES.forEach(function(r,i){ var o = document.createElement("option"); o.value = i; o.textContent = r.name; sel.appendChild(o); });
-  function showRule(){
-    var r = RULES[sel.value];
-    $("ruleDl").innerHTML = "<dt>Action</dt><dd>" + r.action + "</dd><dt>Condition</dt><dd>SI " + r.cond + "</dd><dt>Modification</dt><dd>ALORS " + r.mod + "</dd>";
-  }
-  sel.addEventListener("change", showRule); showRule();
-
-  var tilesEl = $("tiles"), tiles = [];
-  hub.forEach(function(c, i){
-    var t = document.createElement("button");
-    t.type = "button"; t.className = "tile"; t.tabIndex = -1; t.title = c.id;
-    t.addEventListener("click", function(){ selIdx = i; paintSel(); showFiche(); });
-    tilesEl.appendChild(t); tiles.push(t);
-  });
-  function fmtPrice(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, "\u2019") + " CHF"; }
-  function fmtEnd(e){ return String(e % 100).padStart(2,"0") + "/" + Math.floor(e/100); }
-  function paintTiles(){
-    hub.forEach(function(c,i){
-      tiles[i].classList.toggle("renew", c.status === "À renouveler");
-      tiles[i].classList.toggle("hit", !!lastChanged[i]);
-    });
-    var renew = hub.filter(function(c){ return c.status === "À renouveler"; }).length;
-    $("hubStat").textContent = renew ? renew + " à renouveler" : "";
-  }
-  function paintSel(){ tiles.forEach(function(t,i){ t.classList.toggle("sel", i === selIdx); }); }
-  function showFiche(){
-    var c = hub[selIdx], ch = lastChanged[selIdx] || [];
-    function row(k, label, val){ return "<tr><td>" + label + "</td><td" + (ch.indexOf(k) >= 0 ? ' class="chg"' : "") + ">" + val + "</td></tr>"; }
-    $("fiche").innerHTML = '<div class="fh"><span>' + c.id + '</span><span>' + (ch.length ? "modifié par la dernière règle" : "tableau Excel") + '</span></div><table>' +
-      row("supplier","Fournisseur",c.supplier) + row("eligible","Éligible",c.eligible ? "Oui" : "Non") +
-      row("price","Prix",fmtPrice(c.price)) + row("end","Fin de contrat",fmtEnd(c.end)) + row("status","Statut",c.status) + "</table>";
-  }
-  function now(){ var d = new Date(); return [d.getHours(),d.getMinutes(),d.getSeconds()].map(function(n){ return String(n).padStart(2,"0"); }).join(":"); }
-  function log(html){ var li = document.createElement("li"); li.innerHTML = "<time>" + now() + "</time>" + html; var ol = $("log"); ol.appendChild(li); ol.parentNode.scrollTop = ol.parentNode.scrollHeight; }
-  function showBackups(){ $("backups").textContent = "Sauvegardes conservées : " + backups.length + " sur " + KEEP + "."; $("undoBtn").disabled = !backups.length || busy; }
-
-  var busy = false;
-  $("runBtn").addEventListener("click", function(){
-    if (busy) return; busy = true; $("runBtn").disabled = true; $("undoBtn").disabled = true;
-    var r = RULES[sel.value];
-    bcount++; var name = "backup_" + String(bcount).padStart(3,"0");
-    backups.push({name:name, data:clone(hub), changed:lastChanged}); if (backups.length > KEEP) backups.shift();
-    log("Sauvegarde du HUB créée : <b>" + name + "</b>");
-    lastChanged = {}; paintTiles();
-    var hits = 0, i = 0, examples = [];
-    function finish(){
-      busy = false; $("runBtn").disabled = false;
-      log("Règle « " + r.name + " » : <b>" + hits + " contrats modifiés</b>, " + (hub.length - hits) + " inchangés, 0 erreur.");
-      examples.slice(0,2).forEach(function(e){ log(e); });
-      if (!hits) log("Aucun contrat ne remplit la condition. Rien n'a été modifié.");
-      showBackups(); showFiche();
-    }
-    function step(){
-      var n = reduce ? hub.length : 4;
-      for (var k = 0; k < n && i < hub.length; k++, i++){
-        (function(idx){
-          var c = hub[idx], t = tiles[idx];
-          if (!reduce){ t.classList.add("scan"); setTimeout(function(){ t.classList.remove("scan"); }, 160); }
-          if (r.test(c)){
-            var before = Object.assign({}, c);
-            var f = r.apply(c); lastChanged[idx] = f; hits++;
-            t.classList.add("hit"); t.classList.toggle("renew", c.status === "À renouveler");
-            if (examples.length < 2){
-              examples.push(c.id + " : " + (f[0] === "price" ? "prix " + fmtPrice(before.price) + " → <b>" + fmtPrice(c.price) + "</b>" : "statut → <b>" + c.status + "</b>"));
-            }
-          }
-        })(i);
-      }
-      if (i < hub.length) setTimeout(step, 28); else { paintTiles(); finish(); }
-    }
-    step();
-  });
-  $("undoBtn").addEventListener("click", function(){
-    if (!backups.length || busy) return;
-    var b = backups.pop();
-    hub = b.data; lastChanged = {};
-    log("Retour à <b>" + b.name + "</b> : HUB restauré tel qu'avant l'exécution.");
-    if (!reduce){ tiles.forEach(function(t,i){ setTimeout(function(){ t.classList.remove("hit"); }, i*4); }); }
-    setTimeout(function(){ paintTiles(); showFiche(); }, reduce ? 0 : 600);
-    showBackups();
-  });
   /* vitrine de l'en-tête */
   (function(){
     var vit = $("vitrine"); if (!vit) return;
@@ -1516,6 +1441,94 @@ dl.facts dd{margin:0;font-size:.97rem}
     im.addEventListener("click", function(){ var i = lb.querySelector("img"); i.src = im.src; i.alt = im.alt; if (lb.showModal) lb.showModal(); else lb.setAttribute("open",""); });
   });
 
+  /* carrousels : une image toutes les 3 s, de droite à gauche, avec pause */
+  document.querySelectorAll(".carousel").forEach(function(c){
+    var track = c.querySelector(".car-track"), imgs = track.querySelectorAll("img"), dots = c.querySelectorAll(".car-dots button");
+    var pauseBtn = c.querySelector(".car-pause");
+    var n = imgs.length, i = 0, seen = false, paused = false, hover = false, timer = null;
+    track.appendChild(imgs[0].cloneNode(true));
+    function paint(){ dots.forEach(function(d, k){ d.classList.toggle("on", k === i % n); }); }
+    function moveTo(k, animate){
+      i = k; track.style.transition = animate ? "" : "none";
+      track.style.transform = "translateX(" + (-i * 100) + "%)"; paint();
+      if (!animate){ void track.offsetWidth; track.style.transition = ""; }
+      if (i === n){ setTimeout(function(){ moveTo(0, false); }, 650); }
+    }
+    function tick(){ if (seen && !paused && !hover && !reduce) moveTo(i + 1, true); }
+    function setPaused(on){
+      paused = on; pauseBtn.textContent = on ? "▶" : "❚❚"; pauseBtn.title = on ? "Lecture" : "Pause";
+      pauseBtn.setAttribute("aria-label", on ? "Reprendre le diaporama" : "Mettre le diaporama en pause");
+    }
+    pauseBtn.addEventListener("click", function(){ setPaused(!paused); });
+    dots.forEach(function(d, k){ d.addEventListener("click", function(){ setPaused(true); moveTo(k, true); }); });
+    c.querySelector(".car-view").addEventListener("mouseenter", function(){ hover = true; });
+    c.querySelector(".car-view").addEventListener("mouseleave", function(){ hover = false; });
+    track.querySelectorAll("img").forEach(function(im){ im.addEventListener("click", function(){ setPaused(true); var li = lb.querySelector("img"); li.src = im.src; li.alt = im.alt; if (lb.showModal) lb.showModal(); else lb.setAttribute("open",""); }); });
+    if ("IntersectionObserver" in window){ new IntersectionObserver(function(es){ seen = es[0].isIntersecting; }, {threshold:.3}).observe(c); } else seen = true;
+    if (reduce) setPaused(true);
+    paint(); timer = setInterval(tick, 3000);
+  });
+
+  /* progression dans le projet affiché (barre fine du haut) et relief des crêtes au défilement */
+  (function(){
+    var secs = Array.prototype.slice.call(document.querySelectorAll(".proj"));
+    var pbar = $("progress");
+    var ridges = Array.prototype.slice.call(document.querySelectorAll(".ridge-div"));
+    var OFF = [72, 48, 26];
+    function ease(q){ return 1 - Math.pow(1 - q, 3); }
+    var tk = false;
+    function upd(){
+      tk = false;
+      var vh = innerHeight, cur = -1, q = 0;
+      secs.forEach(function(sec){
+        var r = sec.getBoundingClientRect();
+        if (r.top < vh * 0.5 && r.bottom > vh * 0.5){ cur = 1; q = Math.min(1, Math.max(0, (vh * 0.5 - r.top) / Math.max(1, r.height - vh * 0.5))); }
+      });
+      pbar.style.opacity = cur >= 0 ? "1" : "0";
+      pbar.style.transform = "scaleX(" + q.toFixed(3) + ")";
+      ridges.forEach(function(rd){
+        var r = rd.getBoundingClientRect();
+        var sec = rd.closest("section"), prev = sec && sec.previousElementSibling;
+        var pw = prev && prev.querySelector(":scope > .wrap");
+        if (r.top > vh + 80 || r.bottom < -vh){ if (pw && pw.style.transform){ pw.style.transform = ""; pw.style.opacity = ""; } return; }
+        var t = reduce ? 1 : Math.min(1, Math.max(0, (vh - r.top) / (vh * 0.8)));
+        var e = ease(t);
+        /* crêtes : montée en profondeur et léger glissement latéral, comme un travelling */
+        var polys = rd.querySelectorAll("polygon");
+        polys.forEach(function(pg, k){
+          if (k === polys.length - 1) return;
+          var dx = (1 - e) * (k % 2 ? -1 : 1) * (k + 1) * 16;
+          pg.style.transform = "translate(" + dx.toFixed(1) + "px," + ((1 - e) * (OFF[k] || 0)).toFixed(1) + "px)";
+        });
+        /* page précédente : elle recule derrière les montagnes */
+        if (pw && !reduce){
+          if (t > 0 && t < 1.001){
+            pw.style.transformOrigin = "50% 100%";
+            pw.style.transform = "translateY(" + (e * 70).toFixed(1) + "px) scale(" + (1 - e * 0.045).toFixed(4) + ")";
+            pw.style.opacity = (1 - e * 0.55).toFixed(3);
+          } else { pw.style.transform = ""; pw.style.opacity = ""; }
+        }
+      });
+    }
+    addEventListener("scroll", function(){ if (!tk){ tk = true; requestAnimationFrame(upd); } }, {passive:true});
+    addEventListener("resize", upd); upd();
+  })();
+
+  /* entrée dans un projet : déclenchée quand son titre arrive à l'écran */
+  (function(){
+    document.querySelectorAll(".proj-head h2").forEach(function(h){
+      var words = h.textContent.trim().split(/\s+/);
+      h.setAttribute("aria-label", h.textContent.trim());
+      h.innerHTML = words.map(function(w, k){ return '<span class="w" aria-hidden="true" style="transition-delay:' + (0.05 + k * 0.045).toFixed(3) + 's">' + w + '</span>'; }).join(" ");
+    });
+    var secs = document.querySelectorAll(".proj");
+    if (!("IntersectionObserver" in window) || reduce){ secs.forEach(function(s){ s.classList.add("entered"); }); return; }
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting){ e.target.closest(".proj").classList.add("entered"); io.unobserve(e.target); } });
+    }, {rootMargin:"0px 0px -18% 0px"});
+    secs.forEach(function(sec){ var h = sec.querySelector(".proj-head"); if (h) io.observe(h); });
+  })();
+
   /* vidéos : une seule lecture à la fois dans toute la page */
   var scriptAction = false;
   document.addEventListener("play", function(e){
@@ -1611,7 +1624,7 @@ dl.facts dd{margin:0;font-size:.97rem}
         $("stageCap").textContent = layers[a] ? layers[a].getAttribute("data-cap") : "";
       }
     }
-    if (!touched){
+    if (!touched && flow){
       var fr = flow.getBoundingClientRect();
       setMode(fr.top + fr.height * 0.5 < vh * 0.62 ? "tool" : "manual");
     }
@@ -1634,8 +1647,6 @@ dl.facts dd{margin:0;font-size:.97rem}
     counters.forEach(function(c){ c.textContent = "0"; co.observe(c); });
   }
 
-  log("HUB chargé : <b>144 contrats</b>, index à jour.");
-  paintTiles(); paintSel(); showFiche(); showBackups();
 })();
 </script>
 </body>
