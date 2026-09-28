@@ -26,7 +26,7 @@
 <meta name="twitter:image" content="https://arnaud-barbier.github.io/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&amp;display=swap">
 <style>
 :root{
   --bg:#0e1117; --well:#12171f; --hair:#21262d; --hard:#3d444d;
@@ -201,6 +201,53 @@ h3{font-family:var(--f-sans);font-weight:650;font-size:1.14rem;letter-spacing:-.
 .arch .ln{fill:none;stroke:var(--accent);stroke-width:1.8;stroke-dasharray:6 5;animation:dash 1.4s linear infinite}
 @keyframes dash{to{stroke-dashoffset:-22}}
 .arch svg.arch-m{display:none}
+
+/* architecture du dashboard, dans le langage visuel du site */
+.dashboard-architecture{margin-top:34px}
+.dash-arch-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px 28px;flex-wrap:wrap}
+.dash-arch-k{font:600 .72rem/1.3 var(--f-sans);letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.dash-arch-title{font:700 clamp(1.35rem,2.8vw,2rem)/1.15 var(--f-sans);letter-spacing:-.02em;color:var(--ink)}
+.dash-arch-meta{font:500 .82rem/1.3 var(--f-sans);color:var(--sub)}
+.dash-arch-frame{position:relative;margin-top:22px;padding:30px 0 18px;border-bottom:1px solid var(--hair)}
+.dash-arch-frame::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--rule)}
+.dashboard-architecture svg{width:100%;height:auto;display:block;font-family:var(--f-sans)}
+.dashboard-architecture .box{fill:var(--well);stroke:var(--hard);stroke-width:1.3}
+.dashboard-architecture .box.hub{fill:var(--accent-well);stroke:var(--accent);stroke-width:1.8}
+.dashboard-architecture .box.aggregate{fill:var(--well);stroke:var(--accent);stroke-width:1.5}
+.dashboard-architecture .t1{fill:var(--ink);font-size:17px;font-weight:700}
+.dashboard-architecture .t2{fill:var(--sub);font-size:13px}
+.dashboard-architecture .flow-label-bg{fill:var(--bg);stroke:var(--hair);stroke-width:1;stroke-dasharray:4 4}
+.dashboard-architecture .flow-label{fill:var(--sub);font-size:12px;font-weight:600;letter-spacing:.02em}
+.dashboard-architecture .ln{fill:none;stroke:var(--accent);stroke-width:1.8;stroke-dasharray:6 5;animation:dash 1.4s linear infinite}
+.dashboard-architecture .ln.return{opacity:.68;animation-direction:reverse}
+.dashboard-architecture .arrow-head{fill:var(--accent)}
+.dashboard-architecture svg.arch-m{display:none}
+.dash-arch-copy{max-width:76ch;margin:20px 0 0;padding-left:18px;border-left:3px solid var(--accent);font-size:.98rem;line-height:1.65;color:var(--sub)}
+.dashboard-architecture + .learn{display:block}
+@media (min-width:681px){
+  .dashboard-architecture .arch-d{width:106%;max-width:none;margin-left:-3%}
+  .dashboard-architecture .arch-d .box.satellite{stroke:#0C7A72;stroke-width:2.1}
+  .dashboard-architecture .arch-d .box.hub{stroke:#155E88;stroke-width:2.4}
+  .dashboard-architecture .arch-d .box.aggregate{stroke:#8A4C91;stroke-width:2.3}
+  .dashboard-architecture .arch-d .ln.from-hub{stroke:#155E88;stroke-width:2.5}
+  .dashboard-architecture .arch-d .ln.from-satellite{stroke:#0C7A72;stroke-width:2.5;opacity:1}
+  .dashboard-architecture .arch-d .ln.centralcal{stroke:#8A4C91;stroke-width:2.7;opacity:1}
+  .dashboard-architecture .arch-d .arrow-head.from-hub{fill:#155E88}
+  .dashboard-architecture .arch-d .arrow-head.from-satellite{fill:#0C7A72}
+  .dashboard-architecture .arch-d .arrow-head.centralcal{fill:#8A4C91}
+  .dashboard-architecture .arch-d .flow-label-bg.from-hub{stroke:#155E88}
+  .dashboard-architecture .arch-d .flow-label-bg.from-satellite{stroke:#0C7A72}
+  .dashboard-architecture .arch-d .flow-label-bg.centralcal{stroke:#8A4C91}
+  .dashboard-architecture .arch-d .flow-label.from-hub{fill:#155E88}
+  .dashboard-architecture .arch-d .flow-label.from-satellite{fill:#0C7A72}
+  .dashboard-architecture .arch-d .flow-label.centralcal{fill:#8A4C91}
+}
+@media (max-width:680px){
+  .dash-arch-head{align-items:flex-start}
+  .dashboard-architecture svg.arch-d{display:none}
+  .dashboard-architecture svg.arch-m{display:block}
+  .dash-arch-frame{padding-top:24px}
+}
 
 /* démonstration du moteur de règles */
 .engine{margin-top:34px;border:1px solid var(--hard);border-radius:4px;overflow:hidden;background:var(--bg)}
@@ -965,7 +1012,8 @@ dl.facts dd{margin:0;font-size:.97rem}
     <div class="wrap">
       <p class="lbl">Projets personnels</p>
       <h2 id="projets-t">Trois projets complets, documentés et opérationnels</h2>
-      <p class="intro intro-strong">Ces projets montrent le côté technique : la création d'outils, souvent financiers. Le côté finance, notamment la gestion de portefeuille, se retrouve sur <a href="https://arnaud-barbier.github.io/Multi-strategy-backtest-engine/" target="_blank" rel="noopener">mon site de recherche systématique</a> et dans mon <a href="#parcours">parcours scolaire</a>.</p>
+      <p class="intro intro-strong">Chaque outil est une démonstration de fonctionnalités appliquées à une problématique concrète. L'objectif est de montrer ce qu'il est possible d'automatiser, afin que chacun puisse imaginer son propre projet et mesurer jusqu'où un workflow Excel peut être amélioré. L'expérience que j'ai acquise en concevant ces outils me permet ensuite d'identifier l'angle d'attaque le plus pertinent pour vos besoins.</p>
+      <p class="intro">Ces projets mettent en avant la création technique d'outils, souvent appliqués à la finance. La gestion de portefeuille est présentée plus en détail sur <a href="https://arnaud-barbier.github.io/Multi-strategy-backtest-engine/" target="_blank" rel="noopener">mon site de recherche systématique</a> et dans mon <a href="#parcours">parcours scolaire</a>.</p>
       <div class="summary">
         <a class="sum-card reveal" href="#dashboard">
           <span class="sum-img"><img src="img/dashboard.jpg" alt="" loading="lazy"></span>
@@ -1057,17 +1105,106 @@ dl.facts dd{margin:0;font-size:.97rem}
         <header class="proj-head reveal"><p class="proj-k">Projet personnel 1 sur 3</p><h2 id="dashboard">Dashboard de suivi des opérations de marché, du risque et de la performance</h2><p class="proj-meta">Projet personnel, 2025, Excel et VBA</p></header>
         <div class="proj-hero" style="--ar:2.16"><figure class="media wide fit" style="--ar:2.16" data-src="img/dashboard.jpg"><div class="frame"></div><figcaption>Vue complète du dashboard. Cliquez pour agrandir.</figcaption></figure></div>
         <div class="body reveal">
-          <p>Conçu en 2025, un tableau de bord Excel/VBA interactif qui transforme un journal d'opérations en outil de pilotage du risque et de la performance, sur trois stratégies et six actifs. Il m'a demandé d'écrire des fonctions de calcul complexes tout en gérant l'interface et les données.</p>
+          <p>Ce dashboard illustre un cas d'usage parmi d'autres : la même approche peut servir à suivre des fonds, des performances ou tout autre indicateur métier.</p>
+          <p>Le projet réunit l'interface, les données et un pipeline complet : calculs, mise en forme, actualisation des graphiques, exports et présentation des résultats, déclenché en un clic.</p>
         </div>
         <div class="tags reveal"><span class="tag">Ciblé</span><span class="tag">Maintenable</span></div>
-        <div class="figs reveal">
-          <div class="fig"><div class="v">3 classeurs</div><div class="n">aux rôles distincts, reliés par des macros</div></div>
-          <div class="fig"><div class="v">1 écran</div><div class="n">interactif pour le risque et la performance</div></div>
-          <div class="fig"><div class="v">5 onglets</div><div class="n">dont un de débogage et un d'instructions</div></div>
-        </div>
+        <figure class="dashboard-architecture reveal" aria-labelledby="dash-arch-title">
+          <div class="dash-arch-head">
+            <div><p class="dash-arch-k">Architecture du projet</p><h3 class="dash-arch-title" id="dash-arch-title">Architecture et flux de données</h3></div>
+            <p class="dash-arch-meta">2 niveaux d'analyse, 5 fichiers Excel</p>
+          </div>
+          <div class="dash-arch-frame">
+            <svg class="arch-d" viewBox="0 0 1040 545" role="img" aria-label="Trois fichiers de calcul par actif échangent des paramètres, des résultats et des graphiques avec le dashboard central. Un cinquième fichier consolide les résultats à l'échelle du portefeuille et des trois stratégies.">
+              <defs>
+                <marker id="dash-arrow-hub" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path class="arrow-head from-hub" d="M0 0 L8 4 L0 8 Z"/></marker>
+                <marker id="dash-arrow-satellite" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path class="arrow-head from-satellite" d="M0 0 L8 4 L0 8 Z"/></marker>
+                <marker id="dash-arrow-centralcal" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path class="arrow-head centralcal" d="M0 0 L8 4 L0 8 Z"/></marker>
+              </defs>
+
+              <rect class="box satellite" x="10" y="50" width="300" height="100" rx="4"/>
+              <text class="t1" x="160" y="82" text-anchor="middle">Calcul1.xlsm</text>
+              <text class="t2" x="160" y="108" text-anchor="middle">Calcul, mise à jour et export</text>
+              <text class="t2" x="160" y="129" text-anchor="middle">Analyses par actif</text>
+
+              <rect class="box satellite" x="370" y="10" width="300" height="100" rx="4"/>
+              <text class="t1" x="520" y="42" text-anchor="middle">Calcul2.xlsm</text>
+              <text class="t2" x="520" y="68" text-anchor="middle">Calcul, mise à jour et export</text>
+              <text class="t2" x="520" y="89" text-anchor="middle">Analyses par actif</text>
+
+              <rect class="box satellite" x="730" y="50" width="300" height="100" rx="4"/>
+              <text class="t1" x="880" y="82" text-anchor="middle">Calcul3.xlsm</text>
+              <text class="t2" x="880" y="108" text-anchor="middle">Calcul, mise à jour et export</text>
+              <text class="t2" x="880" y="129" text-anchor="middle">Analyses par actif</text>
+
+              <path class="ln from-hub" d="M476 260 L145 153" marker-end="url(#dash-arrow-hub)"/>
+              <path class="ln return from-satellite" d="M175 153 L500 260" marker-end="url(#dash-arrow-satellite)"/>
+              <path class="ln from-hub" d="M510 260 L510 113" marker-end="url(#dash-arrow-hub)"/>
+              <path class="ln return from-satellite" d="M530 113 L530 260" marker-end="url(#dash-arrow-satellite)"/>
+              <path class="ln from-hub" d="M564 260 L895 153" marker-end="url(#dash-arrow-hub)"/>
+              <path class="ln return from-satellite" d="M865 153 L540 260" marker-end="url(#dash-arrow-satellite)"/>
+
+              <rect class="flow-label-bg from-satellite" x="15" y="178" width="290" height="32" rx="3"/>
+              <text class="flow-label from-satellite" x="160" y="198" text-anchor="middle">RÉSULTATS TRAITÉS ET GRAPHIQUES</text>
+              <rect class="flow-label-bg from-hub" x="365" y="184" width="310" height="32" rx="3"/>
+              <text class="flow-label from-hub" x="520" y="204" text-anchor="middle">PARAMÈTRES ET NOUVELLES OPÉRATIONS</text>
+              <rect class="flow-label-bg from-satellite" x="735" y="178" width="290" height="32" rx="3"/>
+              <text class="flow-label from-satellite" x="880" y="198" text-anchor="middle">RÉSULTATS TRAITÉS ET GRAPHIQUES</text>
+
+              <rect class="box hub" x="405" y="260" width="230" height="100" rx="4"/>
+              <text class="t1" x="520" y="302" text-anchor="middle">CentralS.xlsm</text>
+              <text class="t2" x="520" y="329" text-anchor="middle">Dashboard central</text>
+
+              <path class="ln centralcal" d="M509 363 V428" marker-end="url(#dash-arrow-centralcal)"/>
+              <path class="ln return centralcal" d="M531 428 V363" marker-end="url(#dash-arrow-centralcal)"/>
+              <rect class="flow-label-bg centralcal" x="347" y="382" width="346" height="32" rx="3"/>
+              <text class="flow-label centralcal" x="520" y="402" text-anchor="middle">CONSOLIDATION DU PORTEFEUILLE</text>
+
+              <rect class="box aggregate" x="360" y="430" width="320" height="105" rx="4"/>
+              <text class="t1" x="520" y="464" text-anchor="middle">CentralCal.xlsm</text>
+              <text class="t2" x="520" y="490" text-anchor="middle">Agrégation des 3 stratégies</text>
+              <text class="t2" x="520" y="512" text-anchor="middle">Calculs et simulations Monte-Carlo</text>
+            </svg>
+
+            <svg class="arch-m" viewBox="0 0 360 690" role="img" aria-label="Version mobile du flux entre les trois fichiers de calcul, le dashboard central et le fichier de consolidation.">
+              <defs>
+                <marker id="dash-arrow-m" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path class="arrow-head" d="M0 0 L8 4 L0 8 Z"/></marker>
+              </defs>
+              <rect class="box" x="10" y="10" width="340" height="82" rx="4"/>
+              <text class="t1" x="28" y="42">Calcul1.xlsm</text><text class="t2" x="28" y="66">Calcul, mise à jour, export et analyse par actif</text>
+              <rect class="box" x="10" y="110" width="340" height="82" rx="4"/>
+              <text class="t1" x="28" y="142">Calcul2.xlsm</text><text class="t2" x="28" y="166">Calcul, mise à jour, export et analyse par actif</text>
+              <rect class="box" x="10" y="210" width="340" height="82" rx="4"/>
+              <text class="t1" x="28" y="242">Calcul3.xlsm</text><text class="t2" x="28" y="266">Calcul, mise à jour, export et analyse par actif</text>
+
+              <path class="ln" d="M70 295 C70 345 128 360 145 410" marker-end="url(#dash-arrow-m)"/>
+              <path class="ln return" d="M165 410 C150 352 92 340 92 295" marker-end="url(#dash-arrow-m)"/>
+              <path class="ln" d="M180 295 V410" marker-end="url(#dash-arrow-m)"/>
+              <path class="ln return" d="M196 410 V295" marker-end="url(#dash-arrow-m)"/>
+              <path class="ln" d="M290 295 C290 345 232 360 215 410" marker-end="url(#dash-arrow-m)"/>
+              <path class="ln return" d="M195 410 C210 352 268 340 268 295" marker-end="url(#dash-arrow-m)"/>
+              <rect class="flow-label-bg" x="47" y="320" width="266" height="32" rx="3"/>
+              <text class="flow-label" x="180" y="340" text-anchor="middle">PARAMÈTRES, RÉSULTATS ET GRAPHIQUES</text>
+
+              <rect class="box hub" x="60" y="410" width="240" height="86" rx="4"/>
+              <text class="t1" x="180" y="444" text-anchor="middle">CentralS.xlsm</text>
+              <text class="t2" x="180" y="469" text-anchor="middle">Dashboard central</text>
+              <path class="ln" d="M170 499 V572" marker-end="url(#dash-arrow-m)"/>
+              <path class="ln return" d="M190 572 V499" marker-end="url(#dash-arrow-m)"/>
+              <rect class="flow-label-bg" x="72" y="520" width="216" height="32" rx="3"/>
+              <text class="flow-label" x="180" y="540" text-anchor="middle">CONSOLIDATION</text>
+
+              <rect class="box aggregate" x="35" y="574" width="290" height="106" rx="4"/>
+              <text class="t1" x="180" y="608" text-anchor="middle">CentralCal.xlsm</text>
+              <text class="t2" x="180" y="634" text-anchor="middle">Agrégation des 3 stratégies</text>
+              <text class="t2" x="180" y="656" text-anchor="middle">Calculs et simulations Monte-Carlo</text>
+            </svg>
+          </div>
+          <figcaption class="dash-arch-copy">Pour éviter de recalculer inutilement l'ensemble du portefeuille, les calculs sont répartis entre trois fichiers satellites, chacun consacré à une seule paire d'actifs. Lorsqu'un actif est modifié, seul le satellite concerné est relancé : il recalcule sa paire, génère ses graphiques et renvoie ses résultats au dashboard. Le fichier de consolidation agrège ensuite ces sorties pour produire la vue du portefeuille et des trois stratégies.</figcaption>
+        </figure>
         <div class="learn">
           <div class="learn-text reveal">
-            <h4>Ce que ce projet m'a appris en conception</h4>
+            <h4>Apports techniques du projet</h4>
             <dl>
               <dt>Optimiser</dt><dd>Accélérer des calculs lourds et repérer où Excel atteint ses limites.</dd>
               <dt>Architecturer</dt><dd>Répartir les données dans un dossier de plusieurs classeurs, chacun avec un rôle ciblé.</dd>
@@ -1075,9 +1212,8 @@ dl.facts dd{margin:0;font-size:.97rem}
               <dt>Documenter</dt><dd>Rédiger et tenir à jour une documentation technique, avec un onglet de débogage pour contrôler les calculs.</dd>
             </dl>
           </div>
-          <figure class="media fit scrub" style="--ar:0.845" data-src="img/dashboard-architecture.png"><div class="frame"></div><figcaption>Graphe d'appels des macros entre les classeurs du projet. Cliquez pour agrandir.</figcaption></figure>
         </div>
-        <div class="keynote reveal"><p><strong>Après avoir parfois trop complexifié certaines parties, j'ai appris à mieux distinguer ce qui apporte réellement de la valeur de ce qui ajoute seulement de la complexité. Cette expérience m'a appris à repérer plus rapidement les architectures et les processus les plus simples et efficaces.</strong></p></div>
+        <div class="keynote reveal"><p><strong>La conception de ce projet a permis de mieux distinguer ce qui apporte réellement de la valeur de ce qui ajoute seulement de la complexité, et de repérer plus rapidement les architectures et les processus les plus simples et efficaces.</strong></p></div>
         <div class="more"><a class="link" href="https://drive.google.com/file/d/1UW9pZjjBp2D2HGCoDu01Oh5XrP5ICXB5/view?usp=sharing" target="_blank" rel="noopener">Lire la documentation technique (PDF)</a></div>
       </article>
     </div>
