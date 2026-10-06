@@ -7,8 +7,8 @@
 <meta name="description" content="Outils Excel/VBA et Python qui s'intègrent aux fichiers et aux habitudes en place, restent simples à utiliser et se maintiennent. Stage de 6 mois recherché à Genève ou Grenoble, janvier à juin 2027.">
 <meta name="author" content="Arnaud Barbier">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cdefs%3E%3CclipPath%20id%3D%22c%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22/%3E%3C/clipPath%3E%3C/defs%3E%3Cg%20clip-path%3D%22url%28%23c%29%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%231D6A96%22/%3E%3Cpolygon%20points%3D%220%2C46%2014%2C26%2022%2C34%2034%2C13%2046%2C30%2054%2C22%2064%2C33%2064%2C64%200%2C64%22%20fill%3D%22%237CC6E8%22/%3E%3Cpolygon%20points%3D%220%2C55%2012%2C42%2022%2C49%2034%2C32%2046%2C47%2056%2C40%2064%2C47%2064%2C64%200%2C64%22%20fill%3D%22%23CDEEFB%22/%3E%3C/g%3E%3C/svg%3E">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2">
-<link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+<link rel="icon" type="image/png" sizes="32x32" href="https://arnaud-barbier.github.io/favicon-32.png?v=2">
+<link rel="apple-touch-icon" href="https://arnaud-barbier.github.io/apple-touch-icon.png?v=2">
 <meta name="theme-color" content="#0e1117">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Arnaud Barbier">
@@ -922,6 +922,17 @@ dl.facts dd{margin:0;font-size:.97rem}
   .reveal{opacity:1;transform:none}
   .pipe span{display:none}
 }
+
+/* Language switch, using the existing colours and typeface. */
+/* Text-only language selector using this site’s blue header palette. */
+.language-switch{display:inline-flex;flex:none;align-self:center;align-items:center;justify-content:flex-end;gap:1.1rem;order:2}
+.language-switch[hidden]{display:none}
+.language-switch button{font:400 .68rem/normal var(--f-sans);letter-spacing:.13em;text-transform:uppercase;border:0;border-radius:0;background:none;color:#3d5261;padding:.32rem 0;cursor:pointer;white-space:nowrap}
+.language-switch button[aria-pressed="true"]{font-weight:600;color:#1D6A96}
+.language-switch button:hover{color:#0B2233}
+.language-switch button:focus-visible{outline:2px solid #1D6A96;outline-offset:4px}
+.topbar .nav{margin-left:auto;order:1}
+@media(max-width:760px){.topbar{flex-wrap:wrap}.topbar .nav{order:3;width:100%;margin-left:0}.language-switch{margin-left:auto}}
 </style>
 </head>
 <body class="no-js">
@@ -930,6 +941,10 @@ dl.facts dd{margin:0;font-size:.97rem}
 <div class="topwrap"><div class="wrap">
   <header class="topbar">
     <a class="brand" href="#top">Arnaud Barbier</a>
+    <div class="language-switch" id="languageSwitch" role="group" aria-label="Langue de la page" hidden>
+      <button type="button" data-language="fr" lang="fr" aria-label="Français" title="Français" aria-pressed="true" data-no-i18n>Français</button>
+      <button type="button" data-language="en" lang="en" aria-label="English" title="English" aria-pressed="false" data-no-i18n>English</button>
+    </div>
     <nav class="nav" aria-label="Sections">
       <a href="#projets">Projets</a>
       <a href="#apport">Ce que j'apporte</a>
@@ -994,17 +1009,17 @@ dl.facts dd{margin:0;font-size:.97rem}
         <a class="vit-win" id="vitWin" href="#dashboard">
           <div class="vit-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="fn" id="vitFn">Risk Performance Dashboard, Excel</span><span class="kind" id="vitKind">capture réelle</span></div>
           <div class="vit-body" id="vitBody" role="tabpanel">
-            <div class="vp cam-panel dash-real on" data-fill="cover" data-video="video/apercu-dashboard.mp4" aria-hidden="false">
-              <div class="cam" data-ar="2.16"><img src="img/dashboard.jpg" alt="Dashboard réel de suivi des opérations, du risque et de la performance"></div>
+            <div class="vp cam-panel dash-real on" data-fill="cover" data-video="https://arnaud-barbier.github.io/video/apercu-dashboard.mp4" aria-hidden="false">
+              <div class="cam" data-ar="2.16"><img src="https://arnaud-barbier.github.io/img/dashboard.jpg" alt="Dashboard réel de suivi des opérations, du risque et de la performance"></div>
               <span class="cam-tag" id="dTag">Vue d'ensemble : tout sur un écran</span>
             </div>
-            <div class="vp cam-panel hub-real" data-video="video/apercu-contrats.mp4" aria-hidden="true">
-              <div class="cam" data-ar="1.8693"><img src="img/contrats-hub.jpg" alt="HUB réel du gestionnaire de contrats, avec ses tableaux générés"><div id="hlWrap"></div></div>
+            <div class="vp cam-panel hub-real" data-video="https://arnaud-barbier.github.io/video/apercu-contrats.mp4" aria-hidden="true">
+              <div class="cam" data-ar="1.8693"><img src="https://arnaud-barbier.github.io/img/contrats-hub.jpg" alt="HUB réel du gestionnaire de contrats, avec ses tableaux générés"><div id="hlWrap"></div></div>
               <div class="ctr-rule">SI fournisseur = <b>Alpes Semences</b> ALORS prix × <b>1,30</b></div>
               <div class="ctr-log"><span id="cBackup">Sauvegarde backup_008 créée</span><span><b id="cHits">0</b> tableaux modifiés</span></div>
             </div>
-            <div class="vp bt" data-video="video/studio-1-creer-notebook.mp4" aria-hidden="true">
-              <div class="wipe"><img id="btImg" src="img/backtest-nav.png" alt="Sortie réelle du moteur : NAV, rebalancements, paliers de trésorerie et drawdown"></div>
+            <div class="vp bt" data-video="https://arnaud-barbier.github.io/video/studio-1-creer-notebook.mp4" aria-hidden="true">
+              <div class="wipe"><img id="btImg" src="https://arnaud-barbier.github.io/img/backtest-nav.png" alt="Sortie réelle du moteur : NAV, rebalancements, paliers de trésorerie et drawdown"></div>
               <span class="scan" aria-hidden="true"></span>
             </div>
           </div>
@@ -1023,15 +1038,15 @@ dl.facts dd{margin:0;font-size:.97rem}
       <p class="intro">Ces projets mettent en avant la création technique d'outils, souvent appliqués à la finance. La gestion de portefeuille est présentée plus en détail sur <a href="https://arnaud-barbier.github.io/Multi-strategy-backtest-engine/" target="_blank" rel="noopener">mon site de présentation du moteur de backtest</a> et dans mon <a href="#parcours">parcours scolaire</a>.</p>
       <div class="summary">
         <a class="sum-card reveal" href="#dashboard">
-          <span class="sum-img"><img src="img/dashboard.jpg" alt="" loading="lazy"></span>
+          <span class="sum-img"><img src="https://arnaud-barbier.github.io/img/dashboard.jpg" alt="" loading="lazy"></span>
           <span class="sum-body"><span class="sum-k">Projet 1, 2025, Excel et VBA</span><b>Dashboard de suivi des opérations de marché, du risque et de la performance</b><span class="sum-d">Un tableau de bord interactif qui pilote le risque et la performance de trois stratégies.</span><span class="sum-go">Voir le projet</span></span>
         </a>
         <a class="sum-card reveal" href="#c1">
-          <span class="sum-img"><img src="img/contrats-hub.jpg" alt="" loading="lazy"></span>
+          <span class="sum-img"><img src="https://arnaud-barbier.github.io/img/contrats-hub.jpg" alt="" loading="lazy"></span>
           <span class="sum-body"><span class="sum-k">Projet 2, août 2026, Excel et VBA</span><b>Gestionnaire de contrats</b><span class="sum-d">Générer et modifier en une fois des milliers de tableaux Excel à structure variée, avec historique et retour en arrière.</span><span class="sum-go">Voir le projet</span></span>
         </a>
         <a class="sum-card reveal" href="#c2">
-          <span class="sum-img"><img src="img/backtest-studio-doc.jpg" alt="" loading="lazy"></span>
+          <span class="sum-img"><img src="https://arnaud-barbier.github.io/img/backtest-studio-doc.jpg" alt="" loading="lazy"></span>
           <span class="sum-body"><span class="sum-k">Projet 3, depuis 2026, Python</span><b>Moteur de backtest et Backtest Studio</b><span class="sum-d">Une interface simple pour exploiter un moteur de backtest Python/Numba complexe.</span><span class="sum-go">Voir le projet</span></span>
         </a>
       </div>
@@ -1110,7 +1125,7 @@ dl.facts dd{margin:0;font-size:.97rem}
       <!-- Dashboard -->
       <article class="case" aria-labelledby="dashboard">
         <header class="proj-head reveal"><p class="proj-k">Projet personnel 1 sur 3</p><h2 id="dashboard">Dashboard de suivi des opérations de marché, du risque et de la performance</h2><p class="proj-meta">Projet personnel, 2025, Excel et VBA</p></header>
-        <div class="proj-hero" style="--ar:2.16"><figure class="media wide fit" style="--ar:2.16" data-src="img/dashboard.jpg"><div class="frame"></div><figcaption>Vue complète du dashboard. Cliquez pour agrandir.</figcaption></figure></div>
+        <div class="proj-hero" style="--ar:2.16"><figure class="media wide fit" style="--ar:2.16" data-src="https://arnaud-barbier.github.io/img/dashboard.jpg"><div class="frame"></div><figcaption>Vue complète du dashboard. Cliquez pour agrandir.</figcaption></figure></div>
         <div class="body reveal">
           <p>Ce dashboard illustre un cas d'usage parmi d'autres : la même approche peut servir à suivre des fonds, des performances ou tout autre indicateur métier.</p>
           <p>Le projet réunit l'interface, les données et un pipeline complet : calculs, mise en forme, actualisation des graphiques, exports et présentation des résultats, <strong class="one-click">déclenché en un clic.</strong></p>
@@ -1232,7 +1247,7 @@ dl.facts dd{margin:0;font-size:.97rem}
       <!-- Gestionnaire de contrats -->
       <article class="case" aria-labelledby="c1">
         <header class="proj-head reveal"><p class="proj-k">Projet personnel 2 sur 3</p><h2 id="c1">Gestionnaire de contrats : génération et modification automatisées de tableaux Excel à structure variée</h2><p class="proj-meta">Projet personnel, août 2026, Excel/VBA, réalisé en moins de 4 jours. Il représente la somme de mes acquis en conception d’outils, automatisation et programmation</p></header>
-        <div class="proj-hero" style="--ar:1.8693"><figure class="media wide fit" style="--ar:1.8693" data-src="img/contrats-hub.jpg"><div class="frame"></div><figcaption>Le HUB : chaque tableau généré reste un classeur Excel standard. Cliquez pour agrandir.</figcaption></figure></div>
+        <div class="proj-hero" style="--ar:1.8693"><figure class="media wide fit" style="--ar:1.8693" data-src="https://arnaud-barbier.github.io/img/contrats-hub.jpg"><div class="frame"></div><figcaption>Le HUB : chaque tableau généré reste un classeur Excel standard. Cliquez pour agrandir.</figcaption></figure></div>
         <aside class="spotlight reveal">
           <p class="sp-lead">Automatiser une même logique entre plusieurs tableaux, quels que soient leur structure et leur emplacement.</p>
           <p>Les données peuvent être repérées, modifiées et exploitées automatiquement, même lorsqu'elles sont réparties entre plusieurs fichiers, feuilles et tableaux différents. L'outil s'intègre ainsi aux méthodes de travail existantes, sans avoir à reconstruire le workflow.</p>
@@ -1286,35 +1301,35 @@ dl.facts dd{margin:0;font-size:.97rem}
             <path class="ln" d="M180 312 V263"/>
           </svg>
         </figure>
-        <figure class="media fit scrub" style="--ar:6.07;margin-top:18px" data-src="img/contrats-dossier.jpg"><div class="frame"></div><figcaption>Le dossier réel : le gestionnaire, le satellite, le HUB et ses sauvegardes horodatées.</figcaption></figure>
+        <figure class="media fit scrub" style="--ar:6.07;margin-top:18px" data-src="https://arnaud-barbier.github.io/img/contrats-dossier.jpg"><div class="frame"></div><figcaption>Le dossier réel : le gestionnaire, le satellite, le HUB et ses sauvegardes horodatées.</figcaption></figure>
 
         <div class="scrolly" id="scrolly">
           <div class="steps">
             <div class="step" data-step="0" id="etape-1"><div class="n">Étape 1 sur 7</div><h4>Dessiner le modèle</h4><p>On dessine le tableau dans Excel, ici un contrat, avec sa mise en forme et ses propres logiques de calcul. Chaque zone à remplir porte une balise, comme <code>{{supplier_name}}</code>. Ajustement automatique des tableaux (représentés ici par des contrats) au format A4, puis le modèle rejoint une galerie avec sa version et son statut.</p>
-              <figure class="m-only carousel"><div class="car-view"><div class="car-track"><img src="img/contrats-etape1-editeur.jpg" alt="Éditeur de modèles : paramètres, options et dictionnaire des zones du modèle actif" loading="lazy"><img src="img/contrats-modele.jpg" alt="Le modèle dessiné dans Excel, avec ses balises et ses métadonnées" loading="lazy"><img src="img/contrats-etape1-apercu-a4.jpg" alt="Aperçu avant impression : ajustement automatique au format A4" loading="lazy"><img src="img/contrats-etape1-modele-multi.jpg" alt="Modèles générés avec leurs repères de mise en page" loading="lazy"></div></div><div class="car-bar"><button type="button" class="car-pause" aria-label="Mettre le diaporama en pause" title="Pause">❚❚</button><div class="car-dots"><button type="button" aria-label="Image 1"></button><button type="button" aria-label="Image 2"></button><button type="button" aria-label="Image 3"></button><button type="button" aria-label="Image 4"></button></div></div><figcaption>Étape 1 : l'éditeur de modèles et son dictionnaire des zones, le modèle balisé, l'aperçu A4 et le modèle ajusté.</figcaption></figure></div>
+              <figure class="m-only carousel"><div class="car-view"><div class="car-track"><img src="https://arnaud-barbier.github.io/img/contrats-etape1-editeur.jpg" alt="Éditeur de modèles : paramètres, options et dictionnaire des zones du modèle actif" loading="lazy"><img src="https://arnaud-barbier.github.io/img/contrats-modele.jpg" alt="Le modèle dessiné dans Excel, avec ses balises et ses métadonnées" loading="lazy"><img src="https://arnaud-barbier.github.io/img/contrats-etape1-apercu-a4.jpg" alt="Aperçu avant impression : ajustement automatique au format A4" loading="lazy"><img src="https://arnaud-barbier.github.io/img/contrats-etape1-modele-multi.jpg" alt="Modèles générés avec leurs repères de mise en page" loading="lazy"></div></div><div class="car-bar"><button type="button" class="car-pause" aria-label="Mettre le diaporama en pause" title="Pause">❚❚</button><div class="car-dots"><button type="button" aria-label="Image 1"></button><button type="button" aria-label="Image 2"></button><button type="button" aria-label="Image 3"></button><button type="button" aria-label="Image 4"></button></div></div><figcaption>Étape 1 : l'éditeur de modèles et son dictionnaire des zones, le modèle balisé, l'aperçu A4 et le modèle ajusté.</figcaption></figure></div>
             <div class="step" data-step="1" id="etape-2"><div class="n">Étape 2 sur 7</div><h4>Saisir les données</h4><p>L'outil génère le formulaire adapté au modèle choisi. On le remplit ou on y colle des données ; les champs obligatoires, les dates et les identifiants uniques sont contrôlés à la saisie.</p>
-              <figure class="media m-only scrub" data-src="img/contrats-formulaire.jpg"><div class="frame"></div><figcaption>La feuille de saisie : import des données, catalogue des modèles, export vers le HUB.</figcaption></figure></div>
+              <figure class="media m-only scrub" data-src="https://arnaud-barbier.github.io/img/contrats-formulaire.jpg"><div class="frame"></div><figcaption>La feuille de saisie : import des données, catalogue des modèles, export vers le HUB.</figcaption></figure></div>
             <div class="step" data-step="2" id="etape-3"><div class="n">Étape 3 sur 7</div><h4>Générer les contrats</h4><p>En un clic, en masse si besoin. Chaque tableau est rangé dans le HUB avec un numéro lisible, par exemple <code>CTR-FY2026-FR-SVC-000001</code>, et reste un tableau Excel normal que l'équipe peut continuer à remplir à la main.</p>
-              <figure class="media m-only scrub" data-src="img/contrats-hub.jpg"><div class="frame"></div><figcaption>Le HUB et son index de contrats.</figcaption></figure></div>
+              <figure class="media m-only scrub" data-src="https://arnaud-barbier.github.io/img/contrats-hub.jpg"><div class="frame"></div><figcaption>Le HUB et son index de contrats.</figcaption></figure></div>
             <div class="step" data-step="3" id="etape-4"><div class="n">Étape 4 sur 7</div><h4>Suivre et tracer</h4><p>Chaque action entre au journal : date, modèle utilisé, contrat concerné, résultat. L'index du HUB permet de retrouver n'importe quel tableau.</p>
-              <figure class="media m-only scrub" data-src="img/contrats-journal.jpg"><div class="frame"></div><figcaption>Le journal : chaque action horodatée, avec son modèle, son contrat et son statut.</figcaption></figure></div>
+              <figure class="media m-only scrub" data-src="https://arnaud-barbier.github.io/img/contrats-journal.jpg"><div class="frame"></div><figcaption>Le journal : chaque action horodatée, avec son modèle, son contrat et son statut.</figcaption></figure></div>
             <div class="step" data-step="4" id="etape-5"><div class="n">Étape 5 sur 7</div><h4>Modifier en masse</h4><p>Le satellite applique des règles écrites en français, sur le principe SI… ALORS… SINON…. Une modification peut remplacer un texte, recalculer une valeur ou lancer une macro.</p>
-              <figure class="m-only stackfig"><div class="stack"><img src="img/contrats-actions.jpg" alt="Onglet Actions du satellite" loading="lazy"><img src="img/contrats-conditions.jpg" alt="Onglet Conditions du satellite" loading="lazy"><img src="img/contrats-modifications.jpg" alt="Onglet Modifications du satellite" loading="lazy"></div><figcaption>Les trois couches du satellite : l'action enchaîne des conditions, chaque condition oriente vers une modification ou une requête.</figcaption></figure></div>
+              <figure class="m-only stackfig"><div class="stack"><img src="https://arnaud-barbier.github.io/img/contrats-actions.jpg" alt="Onglet Actions du satellite" loading="lazy"><img src="https://arnaud-barbier.github.io/img/contrats-conditions.jpg" alt="Onglet Conditions du satellite" loading="lazy"><img src="https://arnaud-barbier.github.io/img/contrats-modifications.jpg" alt="Onglet Modifications du satellite" loading="lazy"></div><figcaption>Les trois couches du satellite : l'action enchaîne des conditions, chaque condition oriente vers une modification ou une requête.</figcaption></figure></div>
             <div class="step" data-step="5" id="etape-6"><div class="n">Étape 6 sur 7</div><h4>Sécuriser chaque modification</h4><p>Le HUB est sauvegardé avant chaque exécution. On navigue entre les sauvegardes, en arrière comme en avant, et un rapport explique la décision prise pour chaque contrat.</p>
-              <figure class="m-only stackfig"><div class="stack"><img src="img/contrats-runlog.jpg" alt="Journal d'exécution du satellite" loading="lazy"><img src="img/contrats-config-hub.jpg" alt="Configuration du HUB et navigation entre les sauvegardes" loading="lazy"></div><figcaption>Le journal d'exécution explique chaque décision, contrat par contrat ; la configuration du HUB permet de naviguer entre les sauvegardes.</figcaption></figure></div>
+              <figure class="m-only stackfig"><div class="stack"><img src="https://arnaud-barbier.github.io/img/contrats-runlog.jpg" alt="Journal d'exécution du satellite" loading="lazy"><img src="https://arnaud-barbier.github.io/img/contrats-config-hub.jpg" alt="Configuration du HUB et navigation entre les sauvegardes" loading="lazy"></div><figcaption>Le journal d'exécution explique chaque décision, contrat par contrat ; la configuration du HUB permet de naviguer entre les sauvegardes.</figcaption></figure></div>
             <div class="step" data-step="6" id="etape-7"><div class="n">Étape 7 sur 7</div><h4>Extraire</h4><p>Les contrats sélectionnés par une règle partent dans un tableau, prêt à être analysé ou partagé.</p>
-              <figure class="m-only stackfig"><div class="stack"><img src="img/contrats-extraction.jpg" alt="Tableau extrait par une requête" loading="lazy"></div><figcaption>Le résultat d'une requête : les contrats sélectionnés, extraits dans un tableau prêt à analyser.</figcaption></figure></div>
+              <figure class="m-only stackfig"><div class="stack"><img src="https://arnaud-barbier.github.io/img/contrats-extraction.jpg" alt="Tableau extrait par une requête" loading="lazy"></div><figcaption>Le résultat d'une requête : les contrats sélectionnés, extraits dans un tableau prêt à analyser.</figcaption></figure></div>
           </div>
           <div class="stage">
             <div class="stage-bar"><span id="stageLbl">Étape 1 sur 7</span><span class="track"><i id="stageFill"></i></span></div>
             <div class="layers">
-              <figure class="layer carousel" data-cap="Étape 1 : l'éditeur de modèles et son dictionnaire des zones, le modèle balisé, l'aperçu A4 et le modèle ajusté."><div class="car-view"><div class="car-track"><img src="img/contrats-etape1-editeur.jpg" alt="Éditeur de modèles : paramètres, options et dictionnaire des zones du modèle actif" loading="lazy"><img src="img/contrats-modele.jpg" alt="Le modèle dessiné dans Excel, avec ses balises et ses métadonnées" loading="lazy"><img src="img/contrats-etape1-apercu-a4.jpg" alt="Aperçu avant impression : ajustement automatique au format A4" loading="lazy"><img src="img/contrats-etape1-modele-multi.jpg" alt="Modèles générés avec leurs repères de mise en page" loading="lazy"></div></div><div class="car-bar"><button type="button" class="car-pause" aria-label="Mettre le diaporama en pause" title="Pause">❚❚</button><div class="car-dots"><button type="button" aria-label="Image 1"></button><button type="button" aria-label="Image 2"></button><button type="button" aria-label="Image 3"></button><button type="button" aria-label="Image 4"></button></div></div><figcaption class="lc">Étape 1 : l'éditeur de modèles et son dictionnaire des zones, le modèle balisé, l'aperçu A4 et le modèle ajusté.</figcaption></figure>
-              <figure class="media layer" data-src="img/contrats-formulaire.jpg" data-cap="La feuille de saisie : import des données, catalogue des modèles, export vers le HUB."><div class="frame"></div><figcaption class="lc">La feuille de saisie : import des données, catalogue des modèles, export vers le HUB.</figcaption></figure>
-              <figure class="media layer" data-src="img/contrats-hub.jpg" data-cap="Le HUB et son index de contrats."><div class="frame"></div><figcaption class="lc">Le HUB et son index de contrats.</figcaption></figure>
-              <figure class="media layer" data-src="img/contrats-journal.jpg" data-cap="Le journal : chaque action horodatée, avec son modèle, son contrat et son statut."><div class="frame"></div><figcaption class="lc">Le journal : chaque action horodatée, avec son modèle, son contrat et son statut.</figcaption></figure>
-              <figure class="layer stackfig" data-cap="Les trois couches du satellite : l'action enchaîne des conditions, chaque condition oriente vers une modification ou une requête."><div class="stack"><img src="img/contrats-actions.jpg" alt="Onglet Actions du satellite" loading="lazy"><img src="img/contrats-conditions.jpg" alt="Onglet Conditions du satellite" loading="lazy"><img src="img/contrats-modifications.jpg" alt="Onglet Modifications du satellite" loading="lazy"></div><figcaption class="lc">Les trois couches du satellite : l'action enchaîne des conditions, chaque condition oriente vers une modification ou une requête.</figcaption></figure>
-              <figure class="layer stackfig" data-cap="Le journal d'exécution explique chaque décision, contrat par contrat ; la configuration du HUB permet de naviguer entre les sauvegardes."><div class="stack"><img src="img/contrats-runlog.jpg" alt="Journal d'exécution du satellite" loading="lazy"><img src="img/contrats-config-hub.jpg" alt="Configuration du HUB et navigation entre les sauvegardes" loading="lazy"></div><figcaption class="lc">Le journal d'exécution explique chaque décision, contrat par contrat ; la configuration du HUB permet de naviguer entre les sauvegardes.</figcaption></figure>
-              <figure class="layer stackfig" data-cap="Le résultat d'une requête : les contrats sélectionnés, extraits dans un tableau prêt à analyser."><div class="stack"><img src="img/contrats-extraction.jpg" alt="Tableau extrait par une requête" loading="lazy"></div><figcaption class="lc">Le résultat d'une requête : les contrats sélectionnés, extraits dans un tableau prêt à analyser.</figcaption></figure>
+              <figure class="layer carousel" data-cap="Étape 1 : l'éditeur de modèles et son dictionnaire des zones, le modèle balisé, l'aperçu A4 et le modèle ajusté."><div class="car-view"><div class="car-track"><img src="https://arnaud-barbier.github.io/img/contrats-etape1-editeur.jpg" alt="Éditeur de modèles : paramètres, options et dictionnaire des zones du modèle actif" loading="lazy"><img src="https://arnaud-barbier.github.io/img/contrats-modele.jpg" alt="Le modèle dessiné dans Excel, avec ses balises et ses métadonnées" loading="lazy"><img src="https://arnaud-barbier.github.io/img/contrats-etape1-apercu-a4.jpg" alt="Aperçu avant impression : ajustement automatique au format A4" loading="lazy"><img src="https://arnaud-barbier.github.io/img/contrats-etape1-modele-multi.jpg" alt="Modèles générés avec leurs repères de mise en page" loading="lazy"></div></div><div class="car-bar"><button type="button" class="car-pause" aria-label="Mettre le diaporama en pause" title="Pause">❚❚</button><div class="car-dots"><button type="button" aria-label="Image 1"></button><button type="button" aria-label="Image 2"></button><button type="button" aria-label="Image 3"></button><button type="button" aria-label="Image 4"></button></div></div><figcaption class="lc">Étape 1 : l'éditeur de modèles et son dictionnaire des zones, le modèle balisé, l'aperçu A4 et le modèle ajusté.</figcaption></figure>
+              <figure class="media layer" data-src="https://arnaud-barbier.github.io/img/contrats-formulaire.jpg" data-cap="La feuille de saisie : import des données, catalogue des modèles, export vers le HUB."><div class="frame"></div><figcaption class="lc">La feuille de saisie : import des données, catalogue des modèles, export vers le HUB.</figcaption></figure>
+              <figure class="media layer" data-src="https://arnaud-barbier.github.io/img/contrats-hub.jpg" data-cap="Le HUB et son index de contrats."><div class="frame"></div><figcaption class="lc">Le HUB et son index de contrats.</figcaption></figure>
+              <figure class="media layer" data-src="https://arnaud-barbier.github.io/img/contrats-journal.jpg" data-cap="Le journal : chaque action horodatée, avec son modèle, son contrat et son statut."><div class="frame"></div><figcaption class="lc">Le journal : chaque action horodatée, avec son modèle, son contrat et son statut.</figcaption></figure>
+              <figure class="layer stackfig" data-cap="Les trois couches du satellite : l'action enchaîne des conditions, chaque condition oriente vers une modification ou une requête."><div class="stack"><img src="https://arnaud-barbier.github.io/img/contrats-actions.jpg" alt="Onglet Actions du satellite" loading="lazy"><img src="https://arnaud-barbier.github.io/img/contrats-conditions.jpg" alt="Onglet Conditions du satellite" loading="lazy"><img src="https://arnaud-barbier.github.io/img/contrats-modifications.jpg" alt="Onglet Modifications du satellite" loading="lazy"></div><figcaption class="lc">Les trois couches du satellite : l'action enchaîne des conditions, chaque condition oriente vers une modification ou une requête.</figcaption></figure>
+              <figure class="layer stackfig" data-cap="Le journal d'exécution explique chaque décision, contrat par contrat ; la configuration du HUB permet de naviguer entre les sauvegardes."><div class="stack"><img src="https://arnaud-barbier.github.io/img/contrats-runlog.jpg" alt="Journal d'exécution du satellite" loading="lazy"><img src="https://arnaud-barbier.github.io/img/contrats-config-hub.jpg" alt="Configuration du HUB et navigation entre les sauvegardes" loading="lazy"></div><figcaption class="lc">Le journal d'exécution explique chaque décision, contrat par contrat ; la configuration du HUB permet de naviguer entre les sauvegardes.</figcaption></figure>
+              <figure class="layer stackfig" data-cap="Le résultat d'une requête : les contrats sélectionnés, extraits dans un tableau prêt à analyser."><div class="stack"><img src="https://arnaud-barbier.github.io/img/contrats-extraction.jpg" alt="Tableau extrait par une requête" loading="lazy"></div><figcaption class="lc">Le résultat d'une requête : les contrats sélectionnés, extraits dans un tableau prêt à analyser.</figcaption></figure>
             </div>
             <p class="stage-cap" id="stageCap"></p>
           </div>
@@ -1332,7 +1347,7 @@ dl.facts dd{margin:0;font-size:.97rem}
       <!-- Backtest -->
       <article class="case" aria-labelledby="c2">
         <header class="proj-head reveal"><p class="proj-k">Projet personnel 3 sur 3</p><h2 id="c2">Moteur de backtest et Backtest Studio, l'infrastructure prise en charge</h2><p class="proj-sub">Une interface simple pour exploiter un moteur de backtest Python/Numba complexe.</p><p class="proj-meta">Projet personnel, depuis février 2026, Python, Numba et extension VS Code</p></header>
-        <div class="proj-hero" style="--ar:1.5901"><figure class="media wide fit" style="--ar:1.5901" data-src="img/backtest-studio-doc.jpg"><div class="frame"></div><figcaption>Backtest Studio : la documentation active s'affiche à côté du code, là où se trouve le curseur. Cliquez pour agrandir.</figcaption></figure></div>
+        <div class="proj-hero" style="--ar:1.5901"><figure class="media wide fit" style="--ar:1.5901" data-src="https://arnaud-barbier.github.io/img/backtest-studio-doc.jpg"><div class="frame"></div><figcaption>Backtest Studio : la documentation active s'affiche à côté du code, là où se trouve le curseur. Cliquez pour agrandir.</figcaption></figure></div>
         <div class="keynote reveal"><p><strong>Ce projet montre comment rendre un framework Python complexe plus simple à utiliser en réduisant les frictions techniques.</strong></p>
           <p>Backtest Studio est une extension VS Code qui :</p>
           <ul class="kl"><li>génère un notebook prérempli et personnalisé ;</li><li>affiche une documentation interactive ;</li><li>automatise l'insertion des fonctions et paramètres du moteur, sans avoir à les mémoriser ;</li><li>facilite la navigation grâce à une barre de sections qui analyse le notebook ouvert.</li></ul>
@@ -1348,19 +1363,19 @@ dl.facts dd{margin:0;font-size:.97rem}
         </div>
         <div class="studio-steps">
           <h4 class="studio-h reveal">Backtest Studio en quatre étapes</h4>
-          <figure class="sv reveal" data-video="video/studio-1-creer-notebook.mp4" data-poster="img/studio-1-poster.jpg">
+          <figure class="sv reveal" data-video="https://arnaud-barbier.github.io/video/studio-1-creer-notebook.mp4" data-poster="https://arnaud-barbier.github.io/img/studio-1-poster.jpg">
             <figcaption><span class="n">1</span><span><b>Créer un notebook.</b> En quelques secondes, le notebook est généré avec tous les branchements déjà en place selon la configuration choisie : régime de marché, out-of-sample, emprunt, etc. L'utilisateur n'a plus qu'à créer sa fonction de génération des signaux d'entrée, et paramétrer ses diverses logiques de tests.</span></figcaption>
             <div class="sv-frame"></div>
           </figure>
-          <figure class="sv reveal" data-video="video/studio-2-importer-logique.mp4" data-poster="img/studio-2-poster.jpg">
+          <figure class="sv reveal" data-video="https://arnaud-barbier.github.io/video/studio-2-importer-logique.mp4" data-poster="https://arnaud-barbier.github.io/img/studio-2-poster.jpg">
             <figcaption><span class="n">2</span><span><b>Brancher sa logique métier.</b> Le notebook prévoit l'emplacement où intégrer la fonction qui génère les signaux d'entrée, avec les données disponibles et le résultat attendu. L'utilisateur sait ainsi immédiatement quelle logique écrire, le reste étant pris en charge par le moteur.</span></figcaption>
             <div class="sv-frame"></div>
           </figure>
-          <figure class="sv reveal" data-video="video/studio-3-documentation-active.mp4" data-poster="img/studio-3-poster.jpg">
+          <figure class="sv reveal" data-video="https://arnaud-barbier.github.io/video/studio-3-documentation-active.mp4" data-poster="https://arnaud-barbier.github.io/img/studio-3-poster.jpg">
             <figcaption><span class="n">3</span><span><b>Utiliser la documentation active.</b> La documentation de chaque paramètre s'affiche au fil de l'écriture, là où se trouve le curseur, pour compléter directement les blocs de paramètres (specs) et ajouter de nouveaux arguments. Elle explique par-dessus tout le rôle de chaque spec et argument dans le fonctionnement du backtest.</span></figcaption>
             <div class="sv-frame"></div>
           </figure>
-          <figure class="sv reveal" data-video="video/studio-4-lancer-resultats.mp4" data-poster="img/studio-4-poster.jpg">
+          <figure class="sv reveal" data-video="https://arnaud-barbier.github.io/video/studio-4-lancer-resultats.mp4" data-poster="https://arnaud-barbier.github.io/img/studio-4-poster.jpg">
             <figcaption><span class="n">4</span><span><b>Lancer le backtest.</b> Un clic pour exécuter le backtest et obtenir les premiers résultats.</span></figcaption>
             <div class="sv-frame"></div>
           </figure>
@@ -1397,8 +1412,8 @@ dl.facts dd{margin:0;font-size:.97rem}
       <div class="cv">
         <div class="reveal">
           <h3>Formation</h3>
-          <div class="entry has-logo"><img class="logo" style="padding:3px" src="img/logo-heg.png" alt="Logo de la HEG Genève" width="44" height="44"><div><div class="d">Septembre 2025 à janvier 2026</div><div class="w">HEG Genève, Économie d'entreprise, option principale Banque &amp; Finance (échange)</div><p>Gestion de fortune, finance décentralisée, statistiques. Python pour l'analyse de données (6/6), gestion de projet (5,7/6).</p></div></div>
-          <div class="entry has-logo"><img class="logo" style="object-fit:cover" src="img/logo-gem.png" alt="Logo de Grenoble École de Management" width="44" height="44"><div><div class="d">2023 à 2027</div><div class="w">Grenoble École de Management, International Bachelor in Business Administration</div><p>4e année, parcours international, 241 ECTS. Finance d'entreprise, comptabilité, analyse de données. Moyenne de 16,6/20.</p></div></div>
+          <div class="entry has-logo"><img class="logo" style="padding:3px" src="https://arnaud-barbier.github.io/img/logo-heg.png" alt="Logo de la HEG Genève" width="44" height="44"><div><div class="d">Septembre 2025 à janvier 2026</div><div class="w">HEG Genève, Économie d'entreprise, option principale Banque &amp; Finance (échange)</div><p>Gestion de fortune, finance décentralisée, statistiques. Python pour l'analyse de données (6/6), gestion de projet (5,7/6).</p></div></div>
+          <div class="entry has-logo"><img class="logo" style="object-fit:cover" src="https://arnaud-barbier.github.io/img/logo-gem.png" alt="Logo de Grenoble École de Management" width="44" height="44"><div><div class="d">2023 à 2027</div><div class="w">Grenoble École de Management, International Bachelor in Business Administration</div><p>4e année, parcours international, 241 ECTS. Finance d'entreprise, comptabilité, analyse de données. Moyenne de 16,6/20.</p></div></div>
         </div>
         <div class="reveal">
           <h3>Compétences</h3>
@@ -1459,7 +1474,7 @@ dl.facts dd{margin:0;font-size:.97rem}
   function $(id){return document.getElementById(id);}
 
   /* photo d'en-tête : remplacer img/montagne.jpg par votre photo */
-  var HERO_SRC = "img/montagne.jpg";
+  var HERO_SRC = "https://arnaud-barbier.github.io/img/montagne.jpg";
   var heroImg = $("heroImg");
   var probe = new Image();
   probe.onload = function(){ heroImg.src = HERO_SRC; $("heroPhoto").classList.add("has-img"); document.body.classList.add("has-photo"); };
@@ -1620,7 +1635,7 @@ dl.facts dd{margin:0;font-size:.97rem}
       META[2] = {fn:"Backtest Studio, VS Code", kind:"capture réelle", href:"#c2", desc:"Une étude de backtest guidée pas à pas", dwell:5500};
       if (idx === 2){ var k = idx; idx = -1; show(k); }
     };
-    studio.src = "img/apercu-backtest-studio.png";
+    studio.src = "https://arnaud-barbier.github.io/img/apercu-backtest-studio.png";
 
     var started = false;
     function place(p, x, animate){
@@ -2006,6 +2021,447 @@ dl.facts dd{margin:0;font-size:.97rem}
   }
 
 })();
+</script>
+<script>
+/* Local translation catalogue; no service or network request is used for translation. */
+(function () {
+  'use strict';
+  var dictionary = {
+  "Arnaud Barbier, des outils de gestion utiles et durables": "Arnaud Barbier, practical management tools built to last",
+  "Outils Excel/VBA et Python qui s'intègrent aux fichiers et aux habitudes en place, restent simples à utiliser et se maintiennent. Stage de 6 mois recherché à Genève ou Grenoble, janvier à juin 2027.": "Excel/VBA and Python tools that fit existing files and workflows, stay easy to use and are straightforward to maintain. Seeking a six-month internship in Geneva or Grenoble, January to June 2027.",
+  "Arnaud Barbier, outils de gestion Excel/VBA et Python": "Arnaud Barbier, Excel/VBA and Python management tools",
+  "Des outils ciblés, branchés sur votre façon de travailler. Dashboard de risque, gestionnaire de contrats, moteur de backtest. Disponible pour un stage de 6 mois de janvier à juin 2027.": "Purpose-built tools that fit the way you work. Risk dashboard, contract manager and backtesting engine. Available for a six-month internship from January to June 2027.",
+  "Aperçu du site d'Arnaud Barbier : outils de gestion et projets": "Preview of Arnaud Barbier's website: management tools and projects",
+  "Des outils ciblés, branchés sur votre façon de travailler.": "Purpose-built tools that fit the way you work.",
+  "Projets": "Projects",
+  "Ce que j'apporte": "What I bring",
+  "Réalisations": "Work & projects",
+  "Parcours": "Background",
+  "Arête alpine au lever du jour, photographiée par Arnaud Barbier": "Alpine ridge at dawn, photographed by Arnaud Barbier",
+  "Photo : Arnaud Barbier": "Photo: Arnaud Barbier",
+  "Outils de gestion, automatisation, finance & data": "Management tools, automation, finance & data",
+  "Je conçois en Excel/VBA et en Python des outils de gestion et d'aide à la décision financière qui partent de besoins opérationnels. Faits pour s'intégrer aux fichiers et aux habitudes déjà en place, ils restent simples à utiliser et facilement maintenables.": "I build management and financial decision-support tools in Excel/VBA and Python, starting with operational needs. Designed to fit existing files and working habits, they remain easy to use and maintain.",
+  "Disponible pour un stage de 6 mois de janvier à juin 2027.": "Available for a six-month internship from January to June 2027.",
+  "projets complets et opérationnels": "complete, working projects",
+  "expériences en entreprise": "corporate work experiences",
+  "et Python": "and Python",
+  "Aperçu de trois outils": "Preview of three tools",
+  "Aperçu": "Preview",
+  "Contrats": "Contracts",
+  "Mettre en pause le défilement automatique": "Pause automatic slideshow",
+  "capture réelle": "Actual screenshot",
+  "Dashboard réel de suivi des opérations, du risque et de la performance": "Actual dashboard for monitoring trading activity, risk and performance",
+  "Vue d'ensemble : tout sur un écran": "Overview: everything on one screen",
+  "HUB réel du gestionnaire de contrats, avec ses tableaux générés": "Actual contract manager HUB with its generated tables",
+  "SI fournisseur =": "IF supplier =",
+  "ALORS prix ×": "THEN price ×",
+  "Sauvegarde backup_008 créée": "Backup backup_008 created",
+  "tableaux modifiés": "tables updated",
+  "Sortie réelle du moteur : NAV, rebalancements, paliers de trésorerie et drawdown": "Actual engine output: NAV, rebalancing, cash levels and drawdown",
+  "Dashboard de risque et de performance": "Risk and performance dashboard",
+  "Opérations de marché, risque et performance": "Trading activity, risk and performance",
+  "Voir le projet": "View project",
+  "Projets personnels": "Personal projects",
+  "Trois projets complets, documentés et opérationnels": "Three complete, documented and working projects",
+  "Chaque outil est une démonstration de fonctionnalités appliquées à une problématique concrète. L'objectif est de montrer ce qu'il est possible d'automatiser, afin que chacun puisse imaginer son propre projet et mesurer jusqu'où un workflow Excel peut être amélioré. L'expérience que j'ai acquise en concevant ces outils me permet ensuite d'identifier l'angle d'attaque le plus pertinent pour vos besoins.": "Each tool demonstrates features applied to a specific problem. The aim is to show what can be automated, so that anyone can imagine their own project and see how far an Excel workflow can be improved. The experience I gained building these tools helps me identify the most relevant approach for your needs.",
+  "Ces projets mettent en avant la création technique d'outils, souvent appliqués à la finance. La gestion de portefeuille est présentée plus en détail sur": "These projects focus on building tools, often for financial applications. Portfolio management is covered in more detail on",
+  "mon site de présentation du moteur de backtest": "my backtesting engine website",
+  "et dans mon": "and in my",
+  "parcours scolaire": "academic background",
+  "Projet 1, 2025, Excel et VBA": "Project 1, 2025, Excel and VBA",
+  "Dashboard de suivi des opérations de marché, du risque et de la performance": "Dashboard for monitoring trading activity, risk and performance",
+  "Un tableau de bord interactif qui pilote le risque et la performance de trois stratégies.": "An interactive dashboard that tracks the risk and performance of three strategies.",
+  "Projet 2, août 2026, Excel et VBA": "Project 2, August 2026, Excel and VBA",
+  "Gestionnaire de contrats": "Contract manager",
+  "Générer et modifier en une fois des milliers de tableaux Excel à structure variée, avec historique et retour en arrière.": "Generate and update thousands of Excel tables with different structures in one go, with a full history and rollback.",
+  "Projet 3, depuis 2026, Python": "Project 3, since 2026, Python",
+  "Moteur de backtest et Backtest Studio": "Backtesting engine and Backtest Studio",
+  "Une interface simple pour exploiter un moteur de backtest Python/Numba complexe.": "A simple interface for working with a complex Python/Numba backtesting engine.",
+  "Vous pouvez naviguer dans le contenu grâce au menu en bas à droite de l'écran.": "Use the menu at the bottom right of the screen to navigate the page.",
+  "Quatre exigences de conception": "Four design requirements",
+  "Un outil n'a de valeur que s'il est adopté, et il n'est adopté que s'il ne bouscule pas le travail d'une équipe.": "A tool only has value if people adopt it, and they only adopt it if it fits the way their team works.",
+  "Mes expériences en entreprise": "My corporate work experiences",
+  "m'ont appris à comprendre rapidement la logique de travail propre à chaque équipe, même lorsqu'elle est peu formalisée, pour cibler ce qui coûte du temps ou provoque des erreurs.": "taught me to quickly understand how each team works, even when its processes are informal, and identify what wastes time or causes errors.",
+  "Ciblé": "Purpose-built",
+  "Le point de départ est une tâche répétitive, coûteuse en temps ou source d'erreurs": "The starting point is a repetitive, time-consuming or error-prone task",
+  "En pratique": "In practice",
+  "Plusieurs milliers de tableaux à structure différente peuvent être modifiés en une seule fois à partir d'une règle écrite en français. Le traitement devient structuré et reproductible, avec un historique complet des opérations pour assurer la traçabilité des modifications.": "Several thousand tables with different structures can be updated at once using a rule written in French. Processing becomes structured and repeatable, with a full operation history to keep track of every change.",
+  "Voir le moteur de règles": "See the rules engine",
+  "Intégré": "Integrated",
+  "L'outil reprend les fichiers, les formats et les habitudes en place sans imposer de changement majeur.": "The tool works with existing files, formats and habits without requiring major changes.",
+  "Chaque tableau généré reste un classeur Excel standard et peut continuer à être modifié manuellement.": "Each generated table remains a standard Excel workbook and can still be edited manually.",
+  "Voir la génération des tableaux": "See table generation",
+  "Voir la synchronisation Excel et Google Sheets": "See Excel and Google Sheets synchronisation",
+  "Simple à utiliser": "Easy to use",
+  "Le gain de temps doit d'abord venir de la simplicité d'utilisation, pas seulement de l'automatisation en arrière-plan.": "Time savings should come first from ease of use, as well as from automation behind the scenes.",
+  "Formulaire de saisie généré automatiquement, documentation interactive, navigation facilitée, valeurs préremplies, contrôles intégrés, messages d'erreur explicites…": "Automatically generated input forms, interactive documentation, easier navigation, prefilled values, built-in checks and clear error messages…",
+  "Voir le formulaire généré": "See the generated form",
+  "Voir Backtest Studio": "See Backtest Studio",
+  "Maintenable": "Maintainable",
+  "Documentation, contrôles, journalisation et mécanismes de sauvegarde font partie de l'architecture des outils.": "Documentation, checks, logging and backups are built into the tools' architecture.",
+  "Couche de paramétrage explicite : les règles métier peuvent être traduites en actions sans intervenir dans le code, rien n'est codé en dur. Documentation claire de la logique interne.": "An explicit configuration layer: business rules can be translated into actions without editing the code; nothing is hard-coded. Clear documentation of the internal logic.",
+  "Voir les sauvegardes": "See backups",
+  "Voir les tests et la documentation": "See tests and documentation",
+  "Projets et outils en situation réelle": "Projects and tools in real-world use",
+  "Construits en entreprise et en projets personnels. Chacun peut être présenté et démontré.": "Built in companies and as personal projects. Each can be presented and demonstrated.",
+  "En entreprise": "In companies",
+  "Trois expériences, dont deux consacrées à la création d'outils financiers.": "Three work experiences, including two focused on building financial tools.",
+  "Mai à juillet 2026": "May to July 2026",
+  "Suivi du courtage et rentabilité des contrats de semences": "Brokerage monitoring and seed contract profitability",
+  "Des outils Apps Script pour analyser les variations de volumes de courtage, et un modèle Excel/VBA pour évaluer en quelques secondes la rentabilité d'un contrat de multiplication de semences selon le coût de production agricole, le prix et le volume potentiel des ventes. Participation aux opérations de courtage auprès des acheteurs et vendeurs.": "Apps Script tools to analyse changes in brokerage volumes, and an Excel/VBA model to assess the profitability of a seed multiplication contract in seconds, based on agricultural production costs, prices and potential sales volumes. Participation in brokerage operations with buyers and sellers.",
+  "Juin à août 2025": "June to August 2025",
+  "Modèle financier automatisé": "Automated financial model",
+  "Un modèle Excel/VBA bâti sur une architecture de données centralisée, avec contrôles d'erreur et simulations de scénarios, pour le service comptable et financier.": "An Excel/VBA model built on a centralised data architecture, with error checks and scenario simulations, for the accounting and finance department.",
+  "Mai à juillet 2024": "May to July 2024",
+  "Analyse d'actifs numériques": "Digital asset analysis",
+  "Création d'une méthode d'analyse du marché des crypto-actifs liés à l'intelligence artificielle, afin d'identifier les projets les plus pertinents à intégrer à la plateforme d'échange, puis rédaction de rapports d'aide à la décision.": "Developed a method for analysing the market for AI-related crypto-assets, to identify the most relevant projects to add to the exchange platform, then wrote decision-support reports.",
+  "Projet personnel 1 sur 3": "Personal project 1 of 3",
+  "Projet personnel, 2025, Excel et VBA": "Personal project, 2025, Excel and VBA",
+  "Vue complète du dashboard. Cliquez pour agrandir.": "Full dashboard view. Click to enlarge.",
+  "Ce dashboard illustre un cas d'usage parmi d'autres : la même approche peut servir à suivre des fonds, des performances ou tout autre indicateur métier.": "This dashboard illustrates one of many use cases: the same approach can be used to monitor funds, performance or any other business metric.",
+  "Le projet réunit l'interface, les données et un pipeline complet : calculs, mise en forme, actualisation des graphiques, exports et présentation des résultats,": "The project brings together the interface, data and a complete pipeline: calculations, formatting, chart updates, exports and presentation of results,",
+  "déclenché en un clic.": "all triggered with one click.",
+  "Architecture du projet": "Project architecture",
+  "Architecture et flux de données": "Architecture and data flows",
+  "2 niveaux d'analyse, 5 fichiers Excel": "2 levels of analysis, 5 Excel files",
+  "Trois fichiers de calcul par actif échangent des paramètres, des résultats et des graphiques avec le dashboard central. Un cinquième fichier consolide les résultats à l'échelle du portefeuille et des trois stratégies.": "Three asset-level calculation files exchange parameters, results and charts with the central dashboard. A fifth file consolidates results across the portfolio and its three strategies.",
+  "Calcul, mise à jour et export": "Calculation, update and export",
+  "Analyses par actif": "Asset-level analysis",
+  "RÉSULTATS TRAITÉS ET GRAPHIQUES": "PROCESSED RESULTS AND CHARTS",
+  "PARAMÈTRES ET NOUVELLES OPÉRATIONS": "PARAMETERS AND NEW TRADES",
+  "Dashboard central": "Central dashboard",
+  "CONSOLIDATION DU PORTEFEUILLE": "PORTFOLIO CONSOLIDATION",
+  "Agrégation des 3 stratégies": "Aggregation of all 3 strategies",
+  "Calculs et simulations Monte-Carlo": "Calculations and Monte Carlo simulations",
+  "Version mobile du flux entre les trois fichiers de calcul, le dashboard central et le fichier de consolidation.": "Mobile view of the flows between the three calculation files, the central dashboard and the consolidation file.",
+  "Calcul, mise à jour, export et analyse par actif": "Calculation, update, export and asset analysis",
+  "PARAMÈTRES, RÉSULTATS ET GRAPHIQUES": "PARAMETERS, RESULTS AND CHARTS",
+  "Pour éviter de recalculer inutilement l'ensemble du portefeuille, les calculs sont répartis entre trois fichiers satellites, Calculation1 à Calculation3, chacun consacré à une seule paire d'actifs. Lorsqu'un actif est modifié, seul le satellite concerné est relancé : il recalcule sa paire, génère ses graphiques et renvoie ses résultats au dashboard. Le fichier de consolidation agrège ensuite ces sorties pour produire la vue du portefeuille et des trois stratégies.": "To avoid unnecessarily recalculating the entire portfolio, calculations are distributed across three satellite files, Calculation1 to Calculation3, each dedicated to a single pair of assets. When an asset changes, only the relevant satellite runs again: it recalculates its pair, generates its charts and sends its results back to the dashboard. The consolidation file then aggregates these outputs to produce the portfolio and three-strategy views.",
+  "Apports techniques du projet": "Technical contributions",
+  "Optimiser": "Optimise",
+  "Accélérer des calculs lourds et repérer où Excel atteint ses limites.": "Speed up heavy calculations and identify where Excel reaches its limits.",
+  "Architecturer": "Design the architecture",
+  "Répartir les données dans un dossier de plusieurs classeurs, chacun avec un rôle ciblé.": "Distribute data across a folder of workbooks, each with a specific role.",
+  "Faire circuler": "Connect",
+  "Exporter et importer les graphiques en PNG d'un classeur à l'autre.": "Export and import charts as PNG files between workbooks.",
+  "Documenter": "Document",
+  "Rédiger et tenir à jour une documentation technique, avec un onglet de débogage pour contrôler les calculs.": "Write and maintain technical documentation, with a debugging sheet to check calculations.",
+  "La conception de ce projet a permis de mieux distinguer ce qui apporte réellement de la valeur de ce qui ajoute seulement de la complexité, et de repérer plus rapidement les architectures et les processus les plus simples et efficaces.": "Designing this project helped me distinguish what truly adds value from what merely adds complexity, and identify the simplest, most effective architectures and processes more quickly.",
+  "Lire la documentation technique (PDF)": "Read the technical documentation (PDF)",
+  "Projet personnel 2 sur 3": "Personal project 2 of 3",
+  "Gestionnaire de contrats : génération et modification automatisées de tableaux Excel à structure variée": "Contract manager: automated generation and editing of Excel tables with different structures",
+  "Projet personnel, août 2026, Excel/VBA, réalisé en moins de 4 jours. Il représente la somme de mes acquis en conception d’outils, automatisation et programmation": "Personal project, August 2026, Excel/VBA, completed in under 4 days. It brings together everything I have learned about tool design, automation and programming",
+  "Le HUB : chaque tableau généré reste un classeur Excel standard. Cliquez pour agrandir.": "The HUB: each generated table remains a standard Excel workbook. Click to enlarge.",
+  "Automatiser une même logique entre plusieurs tableaux, quels que soient leur structure et leur emplacement.": "Automate the same logic across multiple tables, regardless of their structure or location.",
+  "Les données peuvent être repérées, modifiées et exploitées automatiquement, même lorsqu'elles sont réparties entre plusieurs fichiers, feuilles et tableaux différents. L'outil s'intègre ainsi aux méthodes de travail existantes, sans avoir à reconstruire le workflow.": "Data can be located, updated and used automatically, even when spread across different files, worksheets and tables. The tool therefore fits existing working methods without requiring the workflow to be rebuilt.",
+  "Depuis une interface centrale, les fichiers et les tableaux restent directement exploitables dans Excel.": "From a central interface, files and tables remain directly usable in Excel.",
+  "Il permet de :": "It lets users:",
+  "designer des tableaux directement dans Excel, contraintes d'impression comprises ;": "design tables directly in Excel, including print constraints;",
+  "générer automatiquement un formulaire de saisie adapté ;": "automatically generate a suitable input form;",
+  "ranger chaque tableau généré dans un fichier central ;": "store each generated table in a central file;",
+  "modifier, trier ou extraire plusieurs tableaux en une seule fois grâce à un moteur de règles, sans écrire de code ;": "update, sort or extract multiple tables at once with a rules engine, without writing code;",
+  "déclencher différentes actions à partir des contrats : export, génération de documents, envoi par e-mail ou archivage.": "trigger different actions from contracts: exports, document generation, email or archiving.",
+  "La même architecture peut servir au reporting, au suivi de positions ou à la consolidation de données.": "The same architecture can support reporting, position monitoring or data consolidation.",
+  "Des tableaux complets, par choix": "Complete tables, by design",
+  "J’ai volontairement conservé chaque contrat sous forme de fiche Excel complète, avec sa structure et sa mise en forme. Ce choix était nécessaire pour montrer que l’outil pouvait intervenir directement dans des tableaux déjà existants et structurés, plutôt que sur une base de données simplifiée, même si celle-ci aurait permis une exécution plus rapide.": "I deliberately kept each contract as a complete Excel sheet, with its structure and formatting. This was necessary to demonstrate that the tool could work directly with existing structured tables, rather than a simplified database, even though the latter would have enabled faster execution.",
+  "3 fichiers": "3 files",
+  "gestionnaire, HUB central, satellite de règles": "manager, central HUB, rules satellite",
+  "0 ligne": "0 lines",
+  "de code à écrire pour l'utilisateur": "of code for the user to write",
+  "SI… ALORS…": "IF… THEN…",
+  "règles de modification écrites en français": "update rules written in French",
+  "1 sauvegarde": "1 backup",
+  "automatique avant chaque exécution, avec retour arrière": "created automatically before each run, with rollback",
+  "Organisation en trois fichiers": "Three-file architecture",
+  "Gestionnaire": "Manager",
+  "crée les modèles balisés": "creates tagged templates",
+  "et saisit les données": "and captures data",
+  "tous les contrats générés,": "all generated contracts,",
+  "index, journal,": "index, log,",
+  "sauvegardes": "backups",
+  "applique les règles,": "applies rules,",
+  "modifie ou extrait": "updates or extracts",
+  "crée les modèles, saisit les données": "creates templates, captures data",
+  "contrats, index, journal, sauvegardes": "contracts, index, log, backups",
+  "applique les règles, modifie, extrait": "applies rules, updates, extracts",
+  "Le dossier réel : le gestionnaire, le satellite, le HUB et ses sauvegardes horodatées.": "The actual folder: the manager, satellite, HUB and timestamped backups.",
+  "Étape 1 sur 7": "Step 1 of 7",
+  "Dessiner le modèle": "Design the template",
+  "On dessine le tableau dans Excel, ici un contrat, avec sa mise en forme et ses propres logiques de calcul. Chaque zone à remplir porte une balise, comme": "Design the table in Excel, here a contract, with its formatting and its own calculation logic. Each field to complete has a tag, such as",
+  ". Ajustement automatique des tableaux (représentés ici par des contrats) au format A4, puis le modèle rejoint une galerie avec sa version et son statut.": ". Tables (shown here as contracts) are automatically fitted to A4, then the template joins a gallery with its version and status.",
+  "Éditeur de modèles : paramètres, options et dictionnaire des zones du modèle actif": "Template editor: settings, options and field dictionary for the active template",
+  "Le modèle dessiné dans Excel, avec ses balises et ses métadonnées": "The template designed in Excel, with its tags and metadata",
+  "Aperçu avant impression : ajustement automatique au format A4": "Print preview: automatic fitting to A4",
+  "Modèles générés avec leurs repères de mise en page": "Generated templates with their page layout guides",
+  "Mettre le diaporama en pause": "Pause slideshow",
+  "Image 1": "Image 1",
+  "Image 2": "Image 2",
+  "Image 3": "Image 3",
+  "Image 4": "Image 4",
+  "Étape 1 : l'éditeur de modèles et son dictionnaire des zones, le modèle balisé, l'aperçu A4 et le modèle ajusté.": "Step 1: the template editor and its field dictionary, the tagged template, A4 preview and adjusted template.",
+  "Étape 2 sur 7": "Step 2 of 7",
+  "Saisir les données": "Enter the data",
+  "L'outil génère le formulaire adapté au modèle choisi. On le remplit ou on y colle des données ; les champs obligatoires, les dates et les identifiants uniques sont contrôlés à la saisie.": "The tool generates a form for the selected template. Fill it in or paste data into it; required fields, dates and unique identifiers are checked on entry.",
+  "La feuille de saisie : import des données, catalogue des modèles, export vers le HUB.": "The input sheet: data import, template catalogue and export to the HUB.",
+  "Étape 3 sur 7": "Step 3 of 7",
+  "Générer les contrats": "Generate contracts",
+  "En un clic, en masse si besoin. Chaque tableau est rangé dans le HUB avec un numéro lisible, par exemple": "With one click, in bulk if needed. Each table is stored in the HUB with a readable reference, for example",
+  ", et reste un tableau Excel normal que l'équipe peut continuer à remplir à la main.": ", and remains a standard Excel table that the team can continue to fill in manually.",
+  "Le HUB et son index de contrats.": "The HUB and its contract index.",
+  "Étape 4 sur 7": "Step 4 of 7",
+  "Suivre et tracer": "Track and trace",
+  "Chaque action entre au journal : date, modèle utilisé, contrat concerné, résultat. L'index du HUB permet de retrouver n'importe quel tableau.": "Every action is logged: date, template used, contract concerned and result. The HUB index makes any table easy to find.",
+  "Le journal : chaque action horodatée, avec son modèle, son contrat et son statut.": "The log: each timestamped action, with its template, contract and status.",
+  "Étape 5 sur 7": "Step 5 of 7",
+  "Modifier en masse": "Update in bulk",
+  "Le satellite applique des règles écrites en français, sur le principe SI… ALORS… SINON…. Une modification peut remplacer un texte, recalculer une valeur ou lancer une macro.": "The satellite applies rules written in French, following IF… THEN… ELSE… logic. An update can replace text, recalculate a value or run a macro.",
+  "Onglet Actions du satellite": "Satellite Actions tab",
+  "Onglet Conditions du satellite": "Satellite Conditions tab",
+  "Onglet Modifications du satellite": "Satellite Updates tab",
+  "Les trois couches du satellite : l'action enchaîne des conditions, chaque condition oriente vers une modification ou une requête.": "The satellite's three layers: an action chains conditions together, and each condition leads to an update or a query.",
+  "Étape 6 sur 7": "Step 6 of 7",
+  "Sécuriser chaque modification": "Protect every update",
+  "Le HUB est sauvegardé avant chaque exécution. On navigue entre les sauvegardes, en arrière comme en avant, et un rapport explique la décision prise pour chaque contrat.": "The HUB is backed up before each run. Navigate backwards and forwards through backups, and read a report explaining the decision made for each contract.",
+  "Journal d'exécution du satellite": "Satellite execution log",
+  "Configuration du HUB et navigation entre les sauvegardes": "HUB settings and backup navigation",
+  "Le journal d'exécution explique chaque décision, contrat par contrat ; la configuration du HUB permet de naviguer entre les sauvegardes.": "The execution log explains every decision, contract by contract; the HUB settings let you navigate between backups.",
+  "Étape 7 sur 7": "Step 7 of 7",
+  "Extraire": "Extract",
+  "Les contrats sélectionnés par une règle partent dans un tableau, prêt à être analysé ou partagé.": "Contracts selected by a rule are exported to a table, ready for analysis or sharing.",
+  "Tableau extrait par une requête": "Table extracted by a query",
+  "Le résultat d'une requête : les contrats sélectionnés, extraits dans un tableau prêt à analyser.": "Query result: selected contracts extracted into a table ready for analysis.",
+  "Évolutions prévues.": "Planned improvements.",
+  "Version allégée qui ne stocke que les données et reconstruit la mise en forme à la demande. Export PDF, création de documents Word et préparation d'e-mails Outlook directement depuis le HUB.": "A lighter version that stores only data and rebuilds formatting on demand. PDF export, Word document creation and Outlook email preparation directly from the HUB.",
+  "Lire la présentation complète": "Read the full presentation",
+  "Projet personnel 3 sur 3": "Personal project 3 of 3",
+  "Moteur de backtest et Backtest Studio, l'infrastructure prise en charge": "Backtesting engine and Backtest Studio: the infrastructure is taken care of",
+  "Projet personnel, depuis février 2026, Python, Numba et extension VS Code": "Personal project, since February 2026, Python, Numba and a VS Code extension",
+  "Backtest Studio : la documentation active s'affiche à côté du code, là où se trouve le curseur. Cliquez pour agrandir.": "Backtest Studio: active documentation appears beside the code, at the cursor position. Click to enlarge.",
+  "Ce projet montre comment rendre un framework Python complexe plus simple à utiliser en réduisant les frictions techniques.": "This project shows how to make a complex Python framework easier to use by reducing technical friction.",
+  "Backtest Studio est une extension VS Code qui :": "Backtest Studio is a VS Code extension that:",
+  "génère un notebook prérempli et personnalisé ;": "generates a prefilled, customised notebook;",
+  "affiche une documentation interactive ;": "displays interactive documentation;",
+  "automatise l'insertion des fonctions et paramètres du moteur, sans avoir à les mémoriser ;": "automates the insertion of engine functions and parameters, without needing to memorise them;",
+  "facilite la navigation grâce à une barre de sections qui analyse le notebook ouvert.": "makes navigation easier with a section bar that analyses the open notebook.",
+  "L'extension permet ainsi d'exploiter toute la puissance du moteur de backtest sans avoir à en gérer la complexité technique.": "The extension gives users access to the full power of the backtesting engine without having to manage its technical complexity.",
+  "Le moteur de backtest": "The backtesting engine",
+  "fournit l'infrastructure nécessaire pour tester, optimiser et valider une hypothèse d'investissement.": "provides the infrastructure needed to test, optimise and validate an investment hypothesis.",
+  "Son fonctionnement fait intervenir de nombreux paramètres, conventions et mécanismes que Backtest Studio rend accessibles aux utilisateurs.": "It involves many parameters, conventions and mechanisms that Backtest Studio makes accessible to users.",
+  "Son noyau, compilé avec Numba, assure un suivi rapide et comptable du portefeuille testé, à chaque nouvelle barre de données. Au-delà de la démonstration technique, le projet repose sur des notions de gestion de portefeuille : allocation, rebalancement, gestion de la trésorerie et du levier, validation hors échantillon. Plus d'info :": "Its Numba-compiled core provides fast, accounting-based tracking of the test portfolio at each new data bar. Beyond the technical demonstration, the project draws on portfolio management concepts: allocation, rebalancing, cash and leverage management, and out-of-sample validation. More information:",
+  "site du projet": "project website",
+  "4,44e−16": "4.44e−16",
+  "résidu comptable maximal sur neuf ans de données journalières": "maximum accounting residual over nine years of daily data",
+  "spécifications documentées depuis le code source": "specifications documented from the source code",
+  "tests automatisés, dont chaque composition de modèle": "automated tests, including every model composition",
+  "Backtest Studio en quatre étapes": "Backtest Studio in four steps",
+  "Créer un notebook.": "Create a notebook.",
+  "En quelques secondes, le notebook est généré avec tous les branchements déjà en place selon la configuration choisie : régime de marché, out-of-sample, emprunt, etc. L'utilisateur n'a plus qu'à créer sa fonction de génération des signaux d'entrée, et paramétrer ses diverses logiques de tests.": "In seconds, a notebook is generated with all connections already in place for the selected configuration: market regime, out-of-sample testing, borrowing and more. Users only need to create their entry-signal function and configure their testing logic.",
+  "Brancher sa logique métier.": "Plug in your business logic.",
+  "Le notebook prévoit l'emplacement où intégrer la fonction qui génère les signaux d'entrée, avec les données disponibles et le résultat attendu. L'utilisateur sait ainsi immédiatement quelle logique écrire, le reste étant pris en charge par le moteur.": "The notebook provides a place to add the entry-signal function, with the available data and expected output. Users immediately know which logic to write; the engine handles the rest.",
+  "Utiliser la documentation active.": "Use the active documentation.",
+  "La documentation de chaque paramètre s'affiche au fil de l'écriture, là où se trouve le curseur, pour compléter directement les blocs de paramètres (specs) et ajouter de nouveaux arguments. Elle explique par-dessus tout le rôle de chaque spec et argument dans le fonctionnement du backtest.": "Documentation for each parameter appears as you type, at the cursor position, so you can complete specification blocks (specs) and add new arguments directly. Above all, it explains the role of each spec and argument in the backtest.",
+  "Lancer le backtest.": "Run the backtest.",
+  "Un clic pour exécuter le backtest et obtenir les premiers résultats.": "One click runs the backtest and produces the first results.",
+  "En moins d'une minute, le backtest est entièrement configuré : allocation de portefeuille avec rebalance tous les 50 jours, gestion du cash, emprunt indexé sur le SOFR, séparation out-of-sample et historique des modifications.": "In under a minute, the backtest is fully configured: portfolio allocation with rebalancing every 50 days, cash management, SOFR-linked borrowing, an out-of-sample split and a change history.",
+  "Il ne s'agit là que du strict minimum : le moteur permet ensuite d'aller beaucoup plus loin, avec notamment des logiques stateful et des règles d'allocation plus complexes.": "This is only the starting point: the engine supports much more, including stateful logic and more complex allocation rules.",
+  "Voir le site du projet": "Visit the project website",
+  "Code sur GitHub": "Code on GitHub",
+  "Un processus à simplifier ?": "A process to simplify?",
+  "Certaines étapes demandent-elles encore des contrôles, des copier-coller ou des ajustements répétitifs ?": "Do some steps still involve repetitive checks, copying and pasting, or adjustments?",
+  "Votre processus pourrait-il être plus simple à transmettre, à maintenir ou à faire évoluer ?": "Could your process be easier to hand over, maintain or improve?",
+  "Un workflow peut fonctionner correctement tout en conservant un fort potentiel de simplification. Je peux en analyser le fonctionnement, identifier les points de friction et proposer une automatisation adaptée, sans bouleverser les outils déjà en place.": "A workflow can work well and still have considerable scope for simplification. I can analyse how it works, identify friction points and propose suitable automation without disrupting the tools already in place.",
+  "Un premier échange suffit souvent à repérer où se perd le temps.": "An initial conversation is often enough to spot where time is being lost.",
+  "Échanger sur un processus ou demander une démonstration": "Discuss a process or request a demonstration",
+  "Finance, Bac+4, entre Grenoble et Genève": "Fourth-year finance student, between Grenoble and Geneva",
+  "Formation": "Education",
+  "Logo de la HEG Genève": "HEG Geneva logo",
+  "Septembre 2025 à janvier 2026": "September 2025 to January 2026",
+  "HEG Genève, Économie d'entreprise, option principale Banque & Finance (échange)": "HEG Geneva, Business Administration, Banking & Finance major (exchange)",
+  "Gestion de fortune, finance décentralisée, statistiques. Python pour l'analyse de données (6/6), gestion de projet (5,7/6).": "Wealth management, decentralised finance and statistics. Python for data analysis (6/6), project management (5.7/6).",
+  "Logo de Grenoble École de Management": "Grenoble École de Management logo",
+  "2023 à 2027": "2023 to 2027",
+  "4e année, parcours international, 241 ECTS. Finance d'entreprise, comptabilité, analyse de données. Moyenne de 16,6/20.": "Fourth year, international track, 241 ECTS. Corporate finance, accounting and data analysis. Average grade: 16.6/20.",
+  "Compétences": "Skills",
+  "Outils": "Tools",
+  "Excel avancé, VBA, Apps Script, Python (Numba), SQL, R, Bloomberg": "Advanced Excel, VBA, Apps Script, Python (Numba), SQL, R, Bloomberg",
+  "Analyse financière, analyse de portefeuille, modélisation, suivi de performance, reporting": "Financial analysis, portfolio analysis, modelling, performance monitoring and reporting",
+  "Bloomberg BFF et BMC ; CME Futures, Options, Options Delta et les Greeks": "Bloomberg BFF and BMC; CME Futures, Options, Options Delta and the Greeks",
+  "Langues": "Languages",
+  "Français natif, anglais C1, italien et allemand A2 à B1": "Native French, C1 English, A2–B1 Italian and German",
+  "Sport": "Sports",
+  "Ski, alpinisme, course à pied, vélo de route ; dix ans de gymnastique en compétition": "Skiing, mountaineering, running and road cycling; ten years of competitive gymnastics",
+  "Engagement": "Community involvement",
+  "Model United Nations à l'ONU, Genève, 2023 ; Téléthon, Virades de l'Espoir": "Model United Nations at the UN, Geneva, 2023; Téléthon, Virades de l'Espoir",
+  "Disponible six mois, de janvier à juin 2027": "Available for six months, January to June 2027",
+  "À Genève ou à Grenoble. Entretien sur place ou en visio, avec démonstration des outils.": "In Geneva or Grenoble. Interviews in person or by video call, with tool demonstrations.",
+  "Moteur de backtest": "Backtesting engine",
+  "Arnaud Barbier, 2026. Photographie de l'auteur. Les données des démonstrations sont fictives.": "Arnaud Barbier, 2026. Photography by the author. All demonstration data is fictional.",
+  "Navigation dans la page": "Page navigation",
+  "Aller à": "Go to",
+  "Haut de page": "Back to top",
+  "Fermer": "Close",
+  "Langue de la page": "Page language",
+  "Vidéo de démonstration à venir": "Demo video coming soon",
+  "Capture à venir": "Screenshot coming soon",
+  "capture réelle, règle simulée": "Actual screenshot, simulated rule",
+  "sortie réelle du moteur": "Actual engine output",
+  "Des milliers de tableaux modifiés par une règle": "Thousands of tables updated by one rule",
+  "NAV, rebalancements et drawdown sur neuf ans": "NAV, rebalancing and drawdown over nine years",
+  "Risque par stratégie : E(R), VaR, CVaR, Sharpe": "Risk by strategy: E(R), VaR, CVaR, Sharpe",
+  "Simulation Monte Carlo": "Monte Carlo simulation",
+  "Corrélations entre actifs et radar de performance": "Asset correlations and performance radar",
+  "vidéo réelle": "Actual video",
+  "Un notebook de backtest créé en un clic": "A backtest notebook created with one click",
+  "Backtest Studio dans VS Code : parcours guidé de création d'une étude": "Backtest Studio in VS Code: guided study creation",
+  "Une étude de backtest guidée pas à pas": "A step-by-step backtest study",
+  "Lecture": "Play",
+  "Reprendre le défilement automatique": "Resume automatic slideshow",
+  "Reprendre le diaporama": "Resume slideshow",
+  "Vidéo à venir": "Video coming soon",
+  "Vitesse double": "Double speed",
+  "Plein écran": "Full screen",
+  "1,30": "1.30"
+};
+  var reverse = Object.create(null);
+  Object.keys(dictionary).forEach(function (key) { reverse[dictionary[key]] = key; });
+  var lang = 'fr';
+  var storageKey = 'arnaud-barbier-language';
+  var textRecords = new WeakMap(), attributeRecords = new WeakMap();
+  var attributes = ['alt', 'title', 'aria-label', 'aria-description', 'placeholder', 'data-cap', 'content'];
+  var headings = Array.from(document.querySelectorAll('.proj-head h2')).map(function (element) {
+    return {element: element, source: element.getAttribute('aria-label') || element.textContent.trim(), rendered: 'fr'};
+  });
+  function normalise(value) { return value.replace(/\s+/g, ' ').trim(); }
+  function canonical(value) {
+    var key = normalise(value);
+    if (Object.prototype.hasOwnProperty.call(dictionary, key)) return key;
+    if (Object.prototype.hasOwnProperty.call(reverse, key)) return reverse[key];
+    var match = /^Backup (backup_\d+) created$/.exec(key);
+    if (match) return 'Sauvegarde ' + match[1] + ' créée';
+    match = /^Step (\d+) of (\d+)$/.exec(key);
+    if (match) return 'Étape ' + match[1] + ' sur ' + match[2];
+    for (var pair of [['Enlarge: ', 'Agrandir : '], ['View project: ', 'Voir le projet : ']]) {
+      if (key.indexOf(pair[0]) === 0) return pair[1] + canonical(key.slice(pair[0].length));
+    }
+    return key;
+  }
+  function translate(value) {
+    var source = canonical(value);
+    if (lang === 'fr') return source;
+    if (Object.prototype.hasOwnProperty.call(dictionary, source)) return dictionary[source];
+    var match = /^Sauvegarde (backup_\d+) créée$/.exec(source);
+    if (match) return 'Backup ' + match[1] + ' created';
+    match = /^Étape (\d+) sur (\d+)$/.exec(source);
+    if (match) return 'Step ' + match[1] + ' of ' + match[2];
+    for (var pair of [['Agrandir : ', 'Enlarge: '], ['Voir le projet : ', 'View project: ']]) {
+      if (source.indexOf(pair[0]) === 0) return pair[1] + translate(source.slice(pair[0].length));
+    }
+    return source;
+  }
+  function excluded(element) {
+    return !element || !!element.closest('script,style,noscript,code,pre,[data-no-i18n],.proj-head h2 .w');
+  }
+  function localiseValue(value, record) {
+    if (!record || record.last !== value) {
+      // Remember exact French typography, including non-breaking spaces.
+      record = {source: canonical(value) === normalise(value) ? value : canonical(value), last: value};
+    }
+    var output = lang === 'fr' ? record.source : record.source.replace(/\S[\s\S]*\S|\S/, function (core) { return translate(core); });
+    record.last = output;
+    return record;
+  }
+  function localiseText(node) {
+    if (excluded(node.parentElement) || !node.nodeValue.trim()) return;
+    var record = localiseValue(node.nodeValue, textRecords.get(node));
+    textRecords.set(node, record);
+    if (node.nodeValue !== record.last) node.nodeValue = record.last;
+  }
+  function localiseAttributes(element) {
+    if (excluded(element)) return;
+    var records = attributeRecords.get(element) || Object.create(null);
+    attributes.forEach(function (name) {
+      if (!element.hasAttribute(name)) return;
+      if (name === 'content' && !element.matches('meta[name="description"],meta[property^="og:"],meta[name^="twitter:"]')) return;
+      if (name === 'content' && element.getAttribute('property') === 'og:locale') return;
+      var value = element.getAttribute(name);
+      var record = localiseValue(value, records[name]); records[name] = record;
+      if (value !== record.last) element.setAttribute(name, record.last);
+    });
+    attributeRecords.set(element, records);
+  }
+  function localiseTree(root) {
+    if (root.nodeType === Node.TEXT_NODE) { localiseText(root); return; }
+    if (root.nodeType !== Node.ELEMENT_NODE || excluded(root)) return;
+    localiseAttributes(root);
+    root.querySelectorAll('*').forEach(localiseAttributes);
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    var node; while ((node = walker.nextNode())) localiseText(node);
+  }
+  function renderHeadings() {
+    headings.forEach(function (heading) {
+      var text = translate(heading.source);
+      heading.element.setAttribute('aria-label', text);
+      if (heading.rendered === lang) return;
+      heading.rendered = lang;
+      var fragment = document.createDocumentFragment();
+      text.split(/\s+/).forEach(function (word, index) {
+        if (index) fragment.appendChild(document.createTextNode(' '));
+        var span = document.createElement('span');
+        span.className = 'w'; span.setAttribute('aria-hidden', 'true');
+        span.style.transitionDelay = (0.05 + index * 0.045).toFixed(3) + 's';
+        span.textContent = word; fragment.appendChild(span);
+      });
+      heading.element.replaceChildren(fragment);
+    });
+  }
+  var observer = new MutationObserver(function (changes) {
+    observer.disconnect();
+    changes.forEach(function (change) {
+      if (change.type === 'characterData') localiseText(change.target);
+      else if (change.type === 'attributes') localiseAttributes(change.target);
+      else change.addedNodes.forEach(localiseTree);
+    });
+    observe();
+  });
+  function observe() {
+    observer.observe(document.documentElement, {subtree: true, childList: true, characterData: true, attributes: true, attributeFilter: attributes});
+  }
+  function setLanguage(next, persist) {
+    lang = next === 'en' ? 'en' : 'fr';
+    observer.disconnect();
+    document.documentElement.lang = lang;
+    localiseTree(document.documentElement);
+    renderHeadings();
+    var locale = document.querySelector('meta[property="og:locale"]');
+    if (locale) locale.content = lang === 'en' ? 'en_GB' : 'fr_FR';
+    document.querySelectorAll('[data-language]').forEach(function (button) {
+      button.setAttribute('aria-pressed', String(button.dataset.language === lang));
+    });
+    document.querySelectorAll('a[href^="mailto:"]').forEach(function (anchor) {
+      if (!anchor.dataset.originalMailto) anchor.dataset.originalMailto = anchor.getAttribute('href');
+      var href = anchor.dataset.originalMailto;
+      if (lang === 'en') {
+        href = href.replace('subject=%C3%89changer%20sur%20un%20processus', 'subject=Discuss%20a%20process').replace('subject=Stage%202027', 'subject=Internship%202027');
+      }
+      anchor.setAttribute('href', href);
+    });
+    if (persist) { try { localStorage.setItem(storageKey, lang); } catch (_) { /* Storage may be blocked; switching still works. */ } }
+    observe();
+    // Existing layout-dependent animations update without resetting their state.
+    window.dispatchEvent(new Event('resize'));
+  }
+  document.querySelectorAll('[data-language]').forEach(function (button) {
+    button.addEventListener('click', function () { setLanguage(button.dataset.language, true); });
+  });
+  var saved = 'fr';
+  try { if (localStorage.getItem(storageKey) === 'en') saved = 'en'; } catch (_) {}
+  setLanguage(saved, false);
+  document.getElementById('languageSwitch').hidden = false;
+  window.addEventListener('storage', function (event) {
+    if (event.key === storageKey || event.key === null) setLanguage(event.newValue, false);
+  });
+})();
+
 </script>
 </body>
 </html>
